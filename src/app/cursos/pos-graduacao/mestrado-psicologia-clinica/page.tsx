@@ -1,0 +1,154 @@
+import { Metadata } from 'next'
+import Link from 'next/link'
+import { Clock, User, Target, BookOpen, Briefcase } from 'lucide-react'
+import { PageHeader } from '@/components/shared/PageHeader'
+import { SectionTitle } from '@/components/shared/SectionTitle'
+import { Card, CardContent } from '@/components/ui/Card'
+import { Button } from '@/components/ui/Button'
+import { cursos } from '@/data/cursos'
+
+const curso = cursos.find(c => c.slug === 'mestrado-psicologia-clinica')!
+
+export const metadata: Metadata = {
+  title: curso.nome,
+  description: curso.descricao,
+}
+
+export default function MestradoPsicologiaClinicaPage() {
+  return (
+    <>
+      <PageHeader
+        title={curso.nome}
+        description={curso.descricao}
+      />
+      
+      <section className="py-16">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <div className="lg:col-span-2">
+              <SectionTitle title="Sobre o Programa" />
+              <p className="text-gray-700 mb-8 leading-relaxed">
+                O Mestrado em Psicologia Clínica forma especialistas em avaliação, diagnóstico e 
+                intervenção psicológica, com ênfase na investigação científica e na prática clínica 
+                baseada em evidências. O programa oferece formação avançada e prepara profissionais 
+                para atuação clínica de excelência e para a investigação na área.
+              </p>
+              
+              <SectionTitle title="Objetivos do Programa" />
+              <ul className="space-y-3 mb-8">
+                {curso.objetivos.map((objetivo, index) => (
+                  <li key={index} className="flex items-start">
+                    <Target className="w-5 h-5 text-secondary mr-3 mt-0.5 flex-shrink-0" />
+                    <span className="text-gray-700">{objetivo}</span>
+                  </li>
+                ))}
+              </ul>
+              
+              <SectionTitle title="Perfil do Egresso" />
+              <p className="text-gray-700 mb-8 leading-relaxed">{curso.perfil}</p>
+              
+              <SectionTitle title="Estrutura Curricular" />
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
+                <Card>
+                  <CardContent className="pt-6">
+                    <h4 className="font-semibold text-primary mb-3">1º Ano</h4>
+                    <ul className="text-sm text-gray-600 space-y-1">
+                      <li>• Psicopatologia Avançada</li>
+                      <li>• Avaliação Psicológica Clínica</li>
+                      <li>• Neuropsicologia</li>
+                      <li>• Metodologia de Investigação</li>
+                      <li>• Psicoterapias Baseadas em Evidências</li>
+                      <li>• Seminário de Investigação I</li>
+                    </ul>
+                  </CardContent>
+                </Card>
+                <Card>
+                  <CardContent className="pt-6">
+                    <h4 className="font-semibold text-primary mb-3">2º Ano</h4>
+                    <ul className="text-sm text-gray-600 space-y-1">
+                      <li>• Intervenção Clínica Avançada</li>
+                      <li>• Estágio Clínico Supervisionado</li>
+                      <li>• Seminário de Investigação II</li>
+                      <li>• Dissertação</li>
+                    </ul>
+                  </CardContent>
+                </Card>
+              </div>
+              
+              <SectionTitle title="Requisitos de Admissão" />
+              <ul className="text-gray-700 space-y-2 mb-8">
+                <li>• Licenciatura em Psicologia ou área afim</li>
+                <li>• Média mínima de 14 valores na licenciatura</li>
+                <li>• Curriculum vitae</li>
+                <li>• Carta de motivação</li>
+                <li>• Projeto de investigação preliminar</li>
+                <li>• Entrevista de seleção</li>
+              </ul>
+            </div>
+            
+            <div>
+              <Card className="sticky top-24 border-secondary/30">
+                <CardContent className="pt-6">
+                  <h3 className="text-lg font-semibold text-primary mb-4">Informações</h3>
+                  <div className="space-y-4">
+                    <div className="flex items-center">
+                      <Clock className="w-5 h-5 text-secondary mr-3" />
+                      <div>
+                        <p className="text-sm text-gray-500">Duração</p>
+                        <p className="font-medium">{curso.duracao}</p>
+                      </div>
+                    </div>
+                    <div className="flex items-center">
+                      <User className="w-5 h-5 text-secondary mr-3" />
+                      <div>
+                        <p className="text-sm text-gray-500">Coordenador</p>
+                        <p className="font-medium">{curso.coordenador}</p>
+                      </div>
+                    </div>
+                    <div className="flex items-center">
+                      <BookOpen className="w-5 h-5 text-secondary mr-3" />
+                      <div>
+                        <p className="text-sm text-gray-500">Grau</p>
+                        <p className="font-medium">Mestrado</p>
+                      </div>
+                    </div>
+                    <div className="flex items-center">
+                      <Briefcase className="w-5 h-5 text-secondary mr-3" />
+                      <div>
+                        <p className="text-sm text-gray-500">Regime</p>
+                        <p className="font-medium">Presencial</p>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div className="mt-6 pt-6 border-t">
+                    <p className="text-sm font-medium text-gray-700 mb-3">Áreas de Especialização</p>
+                    <div className="flex flex-wrap gap-2">
+                      {curso.areas.map((area, index) => (
+                        <span
+                          key={index}
+                          className="text-xs bg-secondary/10 text-secondary px-2 py-1 rounded"
+                        >
+                          {area}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                  
+                  <div className="mt-6 space-y-3">
+                    <Link href="/admissoes" className="block">
+                      <Button variant="secondary" className="w-full">Candidate-se</Button>
+                    </Link>
+                    <Link href="/contato" className="block">
+                      <Button variant="outline" className="w-full">Mais informações</Button>
+                    </Link>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+        </div>
+      </section>
+    </>
+  )
+}
