@@ -30,7 +30,7 @@ const noticias = [
 
 export function Noticias() {
   return (
-    <section className="py-16">
+    <section className="py-16 bg-white dark:bg-gray-900">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between mb-8">
           <SectionTitle
@@ -48,7 +48,7 @@ export function Noticias() {
           {noticias.map((noticia) => (
             <Card key={noticia.id} className="h-full">
               <CardHeader>
-                <div className="flex items-center text-sm text-gray-500 mb-2">
+                <div className="flex items-center text-sm text-gray-500 dark:text-gray-400 mb-2">
                   <Calendar className="w-4 h-4 mr-2" />
                   {new Date(noticia.data).toLocaleDateString('pt-BR', {
                     day: '2-digit',
@@ -61,7 +61,7 @@ export function Noticias() {
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-gray-600 text-sm">{noticia.resumo}</p>
+                <p className="text-gray-600 dark:text-gray-400 text-sm">{noticia.resumo}</p>
               </CardContent>
             </Card>
           ))}

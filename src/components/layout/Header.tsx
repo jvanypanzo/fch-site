@@ -5,12 +5,13 @@ import Link from 'next/link'
 import { Menu, X, ChevronDown } from 'lucide-react'
 import { navigationItems } from '@/data/navigation'
 import { MobileMenu } from './MobileMenu'
+import { ThemeToggle } from '@/components/ui/ThemeToggle'
 
 export function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
   return (
-    <header className="sticky top-0 z-50 bg-white shadow-md">
+    <header className="sticky top-0 z-50 bg-white dark:bg-gray-800 shadow-md">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
@@ -19,8 +20,8 @@ export function Header() {
               <span className="text-white font-bold text-lg">F</span>
             </div>
             <div className="hidden sm:block">
-              <span className="text-primary font-bold text-lg">FCSH</span>
-              <span className="hidden md:inline text-gray-600 text-sm ml-2">
+              <span className="text-primary dark:text-blue-400 font-bold text-lg">FCSH</span>
+              <span className="hidden md:inline text-gray-600 dark:text-gray-400 text-sm ml-2">
                 Faculdade de Ciências Sociais e Humanas
               </span>
             </div>
@@ -32,18 +33,18 @@ export function Header() {
               <div key={item.href} className="relative group">
                 <Link
                   href={item.href}
-                  className="px-3 py-2 text-sm font-medium text-gray-700 hover:text-primary hover:bg-gray-50 rounded-md inline-flex items-center"
+                  className="px-3 py-2 text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-blue-400 hover:bg-gray-50 dark:hover:bg-gray-700 rounded-md inline-flex items-center"
                 >
                   {item.title}
                   {item.children && <ChevronDown className="ml-1 w-4 h-4" />}
                 </Link>
                 {item.children && (
-                  <div className="absolute left-0 mt-0 w-56 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 bg-white border rounded-md shadow-lg py-2 z-50">
+                  <div className="absolute left-0 mt-0 w-56 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-md shadow-lg py-2 z-50">
                     {item.children.map((child) => (
                       <Link
                         key={child.href}
                         href={child.href}
-                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-primary"
+                        className="block px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 hover:text-primary dark:hover:text-blue-400"
                       >
                         {child.title}
                       </Link>
@@ -52,6 +53,7 @@ export function Header() {
                 )}
               </div>
             ))}
+            <ThemeToggle />
             <Link
               href="/contato"
               className="ml-4 px-4 py-2 bg-secondary text-white font-medium rounded-md hover:bg-secondary/90 transition-colors"
@@ -61,13 +63,16 @@ export function Header() {
           </nav>
 
           {/* Mobile Menu Button */}
-          <button
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="lg:hidden p-2 text-gray-700 hover:bg-gray-100 rounded-md"
-            aria-label="Menu"
-          >
-            {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-          </button>
+          <div className="flex items-center lg:hidden">
+            <ThemeToggle />
+            <button
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              className="p-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-md"
+              aria-label="Menu"
+            >
+              {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            </button>
+          </div>
         </div>
       </div>
 

@@ -9,54 +9,54 @@ const destaques = [
     title: 'Cursos',
     description: '4 licenciaturas e 2 mestrados nas áreas de Ciências Sociais e Humanas.',
     href: '/cursos',
-    color: 'text-blue-600',
-    bgColor: 'bg-blue-100',
+    color: 'text-blue-600 dark:text-blue-400',
+    bgColor: 'bg-blue-100 dark:bg-blue-900/50',
   },
   {
     icon: Calendar,
     title: 'Eventos',
     description: 'Conferências, seminários e workshops ao longo do ano letivo.',
     href: '/eventos',
-    color: 'text-green-600',
-    bgColor: 'bg-green-100',
+    color: 'text-green-600 dark:text-green-400',
+    bgColor: 'bg-green-100 dark:bg-green-900/50',
   },
   {
     icon: Users,
     title: 'Extensão',
     description: 'Cursos complementares e programas de formação contínua.',
     href: '/extensao',
-    color: 'text-purple-600',
-    bgColor: 'bg-purple-100',
+    color: 'text-purple-600 dark:text-purple-400',
+    bgColor: 'bg-purple-100 dark:bg-purple-900/50',
   },
   {
     icon: Briefcase,
     title: 'Estágios',
     description: 'Parcerias com instituições para estágios curriculares e profissionais.',
     href: '/estagios',
-    color: 'text-orange-600',
-    bgColor: 'bg-orange-100',
+    color: 'text-orange-600 dark:text-orange-400',
+    bgColor: 'bg-orange-100 dark:bg-orange-900/50',
   },
   {
     icon: FlaskConical,
     title: 'CIEI',
     description: 'Centro de Investigação e Estudos Interdisciplinares.',
     href: '/ciei',
-    color: 'text-red-600',
-    bgColor: 'bg-red-100',
+    color: 'text-red-600 dark:text-red-400',
+    bgColor: 'bg-red-100 dark:bg-red-900/50',
   },
   {
     icon: Brain,
     title: 'Laboratório de Psicologia',
     description: 'Serviços de avaliação e acompanhamento psicológico.',
     href: '/laboratorio-psicologia',
-    color: 'text-teal-600',
-    bgColor: 'bg-teal-100',
+    color: 'text-teal-600 dark:text-teal-400',
+    bgColor: 'bg-teal-100 dark:bg-teal-900/50',
   },
 ]
 
 export function Destaques() {
   return (
-    <section className="py-16 bg-gray-50">
+    <section className="py-16 bg-gray-50 dark:bg-gray-900">
       <div className="container mx-auto px-4">
         <SectionTitle
           title="Destaques"
@@ -72,10 +72,10 @@ export function Destaques() {
                   <div className={`w-12 h-12 rounded-lg ${item.bgColor} flex items-center justify-center mb-4`}>
                     <item.icon className={`w-6 h-6 ${item.color}`} />
                   </div>
-                  <h3 className="text-lg font-semibold text-primary mb-2 group-hover:text-secondary transition-colors">
+                  <h3 className="text-lg font-semibold text-primary dark:text-blue-400 mb-2 group-hover:text-secondary transition-colors">
                     {item.title}
                   </h3>
-                  <p className="text-gray-600 text-sm">{item.description}</p>
+                  <p className="text-gray-600 dark:text-gray-400 text-sm">{item.description}</p>
                 </CardContent>
               </Card>
             </Link>

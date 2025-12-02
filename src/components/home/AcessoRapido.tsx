@@ -30,18 +30,18 @@ const acessosRapidos = [
 
 export function AcessoRapido() {
   return (
-    <section className="py-12 bg-primary">
+    <section className="py-12 bg-primary dark:bg-gray-800">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           {acessosRapidos.map((item) => (
             <Link
               key={item.href}
               href={item.href}
-              className="flex flex-col items-center p-6 rounded-lg bg-white/10 hover:bg-white/20 transition-colors text-center group"
+              className="flex flex-col items-center p-6 rounded-lg bg-white/10 hover:bg-white/20 dark:bg-gray-700/50 dark:hover:bg-gray-700 transition-colors text-center group"
             >
               <item.icon className="w-8 h-8 text-secondary mb-3 group-hover:scale-110 transition-transform" />
               <h3 className="text-white font-semibold mb-1">{item.title}</h3>
-              <p className="text-gray-300 text-sm">{item.description}</p>
+              <p className="text-gray-300 dark:text-gray-400 text-sm">{item.description}</p>
             </Link>
           ))}
         </div>

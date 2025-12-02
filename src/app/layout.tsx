@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Header } from '@/components/layout/Header'
 import { Footer } from '@/components/layout/Footer'
+import { ThemeProvider } from '@/components/providers/ThemeProvider'
 import './globals.css'
 
 export const metadata: Metadata = {
@@ -24,13 +25,15 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="pt">
-      <body className="min-h-screen flex flex-col">
-        <Header />
-        <main className="flex-grow">
-          {children}
-        </main>
-        <Footer />
+    <html lang="pt" suppressHydrationWarning>
+      <body className="min-h-screen flex flex-col bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors">
+        <ThemeProvider>
+          <Header />
+          <main className="flex-grow">
+            {children}
+          </main>
+          <Footer />
+        </ThemeProvider>
       </body>
     </html>
   )

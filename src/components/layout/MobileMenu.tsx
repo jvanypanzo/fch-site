@@ -24,26 +24,26 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
   if (!isOpen) return null
 
   return (
-    <div className="lg:hidden bg-white border-t">
+    <div className="lg:hidden bg-white dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700">
       <nav className="container mx-auto px-4 py-4 max-h-[calc(100vh-4rem)] overflow-y-auto">
         {navigationItems.map((item) => {
           const isOpen = openItems.includes(item.href)
           const hasChildren = item.children && item.children.length > 0
 
           return (
-            <div key={item.href} className="border-b border-gray-100 last:border-b-0">
+            <div key={item.href} className="border-b border-gray-100 dark:border-gray-700 last:border-b-0">
               <div className="flex items-center justify-between py-3">
                 <Link
                   href={item.href}
                   onClick={onClose}
-                  className="text-gray-700 hover:text-primary font-medium"
+                  className="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-blue-400 font-medium"
                 >
                   {item.title}
                 </Link>
                 {hasChildren && (
                   <button
                     onClick={() => toggleItem(item.href)}
-                    className="p-2 text-gray-500 hover:text-primary"
+                    className="p-2 text-gray-500 dark:text-gray-400 hover:text-primary dark:hover:text-blue-400"
                     aria-label={isOpen ? 'Fechar submenu' : 'Abrir submenu'}
                   >
                     {isOpen ? (
@@ -61,7 +61,7 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
                       key={child.href}
                       href={child.href}
                       onClick={onClose}
-                      className="block py-2 text-sm text-gray-600 hover:text-primary"
+                      className="block py-2 text-sm text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-blue-400"
                     >
                       {child.title}
                     </Link>
