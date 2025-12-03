@@ -7,23 +7,17 @@ import { Button } from '@/components/ui/Button'
 const noticias = [
   {
     id: '1',
-    titulo: 'Abertas as inscrições para o ano letivo 2024/2025',
-    resumo: 'A FCSH inicia o período de candidaturas para novos estudantes em todos os cursos de graduação e pós-graduação.',
-    data: '2024-01-15',
-    slug: 'inscricoes-2024-2025',
+    titulo: 'Abertas as inscrições para o ano letivo 2025/2026',
+    resumo: 'A FCH inicia o período de candidaturas para novos estudantes em todos os cursos de graduação e pós-graduação.',
+    data: '2025-08-15',
+    slug: 'inscricoes-2025-2026',
   },
-  {
-    id: '2',
-    titulo: 'FCSH celebra 30 anos de excelência académica',
-    resumo: 'A Faculdade de Ciências Sociais e Humanas comemora três décadas de formação de profissionais de referência.',
-    data: '2024-01-10',
-    slug: 'fcsh-30-anos',
-  },
+
   {
     id: '3',
     titulo: 'Novo acordo de cooperação com universidade internacional',
     resumo: 'Parceria permite intercâmbio de estudantes e docentes, fortalecendo a internacionalização da instituição.',
-    data: '2024-01-05',
+    data: '2025-09-05',
     slug: 'acordo-cooperacao-internacional',
   },
 ]
@@ -35,7 +29,7 @@ export function Noticias() {
         <div className="flex items-center justify-between mb-8">
           <SectionTitle
             title="Notícias"
-            subtitle="Fique por dentro das novidades da FCSH"
+            subtitle="Fique por dentro das novidades da Faculdade"
           />
           <Link href="/eventos">
             <Button variant="ghost" className="hidden sm:flex items-center">

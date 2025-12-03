@@ -15,20 +15,19 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 bg-white dark:bg-gray-800 shadow-md border-b-4 border-primary">
       <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-16 lg:h-20">
+        <div className="flex items-center justify-between h-30 lg:h-20">
           {/* Logo */}
-          <Link href="/" className="flex items-center space-x-3">
+          <Link href="/" className="flex items-center space-x-1">
             <Image 
               src={logo} 
               alt="Logo UCAN - Faculdade de Ciências Humanas" 
-              width={50} 
-              height={50}
+              width={100} 
+              height={80}
               className="rounded-full object-cover"
               priority
             />
             <div className="hidden sm:block">
-              <span className="text-primary dark:text-primary font-bold text-lg">FCSH</span>
-              <span className="hidden md:inline text-gray-600 dark:text-gray-400 text-sm ml-2">
+              <span className="hidden md:inline text-gray-1000 dark:text-gray-1000 text-sm ml-2">
                 Faculdade de Ciências Humanas
               </span>
             </div>

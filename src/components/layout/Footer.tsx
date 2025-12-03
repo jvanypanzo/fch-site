@@ -14,14 +14,14 @@ export function Footer() {
               <Image 
                 src={logo} 
                 alt="Logo UCAN - Faculdade de Ciências Humanas" 
-                width={60} 
-                height={60}
+                width={100} 
+                height={100}
                 className="rounded-full object-cover"
               />
-              <span className="text-xl font-bold text-primary">FCSH</span>
+              <span className="text-xl font-bold text-primary">FCH</span>
             </Link>
             <p className="text-gray-300 dark:text-gray-400 text-sm mb-4">
-              Faculdade de Ciências Sociais e Humanas - Formando profissionais que transformam a sociedade desde 1990.
+              Faculdade de Ciências Humanas - Formando profissionais que transformam a sociedade desde 20...
             </p>
             <div className="flex space-x-4">
               <a href="#" className="text-gray-300 dark:text-gray-400 hover:text-primary transition-colors" aria-label="Facebook">
@@ -69,8 +69,8 @@ export function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/ciei" className="text-gray-300 dark:text-gray-400 hover:text-primary transition-colors text-sm">
-                  Investigação
+                <Link href="https://ucan.persistec.com/" className="text-gray-300 dark:text-gray-400 hover:text-primary transition-colors text-sm">
+                  UCAN
                 </Link>
               </li>
             </ul>

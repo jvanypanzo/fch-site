@@ -7,7 +7,7 @@ const destaques = [
   {
     icon: BookOpen,
     title: 'Cursos',
-    description: '4 licenciaturas e 2 mestrados nas áreas de Ciências Sociais e Humanas.',
+    description: '3 licenciaturas e 2 mestrados nas áreas de Ciências Humanas.',
     href: '/cursos',
     color: 'text-blue-600 dark:text-blue-400',
     bgColor: 'bg-blue-100 dark:bg-blue-900/50',
