@@ -1,5 +1,7 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import { Facebook, Instagram, Linkedin, Mail, MapPin, Phone, Youtube } from 'lucide-react'
+import logo from './logo.jpeg'
 
 export function Footer() {
   return (
@@ -8,7 +10,16 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* About */}
           <div>
-            <h3 className="text-xl font-bold mb-4 text-primary">FCSH</h3>
+            <Link href="/" className="flex items-center space-x-3 mb-4">
+              <Image 
+                src={logo} 
+                alt="Logo UCAN - Faculdade de Ciências Humanas" 
+                width={60} 
+                height={60}
+                className="rounded-full object-cover"
+              />
+              <span className="text-xl font-bold text-primary">FCSH</span>
+            </Link>
             <p className="text-gray-300 dark:text-gray-400 text-sm mb-4">
               Faculdade de Ciências Sociais e Humanas - Formando profissionais que transformam a sociedade desde 1990.
             </p>
