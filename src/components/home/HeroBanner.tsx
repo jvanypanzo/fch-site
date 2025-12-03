@@ -3,7 +3,7 @@ import { Button } from '@/components/ui/Button'
 
 export function HeroBanner() {
   return (
-    <section className="relative bg-primary dark:bg-gray-800 min-h-[500px] lg:min-h-[600px] flex items-center">
+    <section className="relative bg-accent dark:bg-gray-800 min-h-[500px] lg:min-h-[600px] flex items-center">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-white/20 to-transparent" />
@@ -19,12 +19,12 @@ export function HeroBanner() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
             <Link href="/cursos">
-              <Button size="lg" variant="secondary" className="w-full sm:w-auto">
+              <Button size="lg" variant="default" className="w-full sm:w-auto bg-primary hover:bg-primary-dark text-white">
                 Conhecer Cursos
               </Button>
             </Link>
             <Link href="/admissoes">
-              <Button size="lg" variant="outline" className="w-full sm:w-auto bg-transparent text-white border-white hover:bg-white hover:text-primary dark:hover:text-gray-900">
+              <Button size="lg" variant="outline" className="w-full sm:w-auto bg-transparent text-white border-primary hover:bg-primary hover:text-white dark:hover:text-white">
                 Inscreva-se
               </Button>
             </Link>
@@ -34,19 +34,19 @@ export function HeroBanner() {
         {/* Stats */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-16 max-w-4xl">
           <div className="text-center">
-            <p className="text-3xl md:text-4xl font-bold text-secondary">4</p>
+            <p className="text-3xl md:text-4xl font-bold text-primary">4</p>
             <p className="text-sm text-gray-300 dark:text-gray-400">Cursos de Graduação</p>
           </div>
           <div className="text-center">
-            <p className="text-3xl md:text-4xl font-bold text-secondary">2</p>
+            <p className="text-3xl md:text-4xl font-bold text-primary">2</p>
             <p className="text-sm text-gray-300 dark:text-gray-400">Mestrados</p>
           </div>
           <div className="text-center">
-            <p className="text-3xl md:text-4xl font-bold text-secondary">12+</p>
+            <p className="text-3xl md:text-4xl font-bold text-primary">12+</p>
             <p className="text-sm text-gray-300 dark:text-gray-400">Docentes</p>
           </div>
           <div className="text-center">
-            <p className="text-3xl md:text-4xl font-bold text-secondary">30+</p>
+            <p className="text-3xl md:text-4xl font-bold text-primary">30+</p>
             <p className="text-sm text-gray-300 dark:text-gray-400">Anos de História</p>
           </div>
         </div>
