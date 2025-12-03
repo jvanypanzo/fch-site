@@ -2,7 +2,7 @@ import { Metadata } from 'next'
 import { PageHeader } from '@/components/shared/PageHeader'
 import { SectionTitle } from '@/components/shared/SectionTitle'
 import { TeamMember } from '@/components/shared/TeamMember'
-import { docentes } from '@/data/docentes'
+import { professores } from '@/data/professores'
 
 export const metadata: Metadata = {
   title: 'Corpo Docente',
@@ -22,7 +22,7 @@ export default function CorpoDocentePage() {
       <section className="py-16">
         <div className="container mx-auto px-4">
           {departamentos.map((departamento) => {
-            const docentesDept = docentes.filter(d => d.departamento === departamento)
+            const docentesDept = professores.filter(d => d.departamento === departamento)
             if (docentesDept.length === 0) return null
             
             return (
@@ -37,6 +37,7 @@ export default function CorpoDocentePage() {
                       areas={docente.areas}
                       email={docente.email}
                       departamento={docente.departamento}
+                      slug={docente.slug}
                     />
                   ))}
                 </div>

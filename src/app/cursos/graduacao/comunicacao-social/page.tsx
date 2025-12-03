@@ -5,9 +5,12 @@ import { PageHeader } from '@/components/shared/PageHeader'
 import { SectionTitle } from '@/components/shared/SectionTitle'
 import { Card, CardContent } from '@/components/ui/Card'
 import { Button } from '@/components/ui/Button'
+import { EstruturaProgramatica } from '@/components/cursos/EstruturaProgramatica'
 import { cursos } from '@/data/cursos'
+import { getEstruturaByCursoSlug } from '@/data/estrutura-curricular'
 
 const curso = cursos.find(c => c.slug === 'comunicacao-social')!
+const estrutura = getEstruturaByCursoSlug('comunicacao-social')
 
 export const metadata: Metadata = {
   title: curso.nome,
@@ -27,7 +30,7 @@ export default function ComunicacaoSocialPage() {
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             <div className="lg:col-span-2">
               <SectionTitle title="Sobre o Curso" />
-              <p className="text-gray-700 mb-8 leading-relaxed">
+              <p className="text-gray-700 dark:text-gray-300 mb-8 leading-relaxed">
                 A Licenciatura em Comunicação Social forma profissionais versáteis para atuar em 
                 jornalismo, publicidade, relações públicas e produção de conteúdo em diversas 
                 plataformas. O curso combina teoria e prática, preparando comunicadores com visão 
@@ -38,44 +41,16 @@ export default function ComunicacaoSocialPage() {
               <ul className="space-y-3 mb-8">
                 {curso.objetivos.map((objetivo, index) => (
                   <li key={index} className="flex items-start">
-                    <Target className="w-5 h-5 text-secondary mr-3 mt-0.5 flex-shrink-0" />
-                    <span className="text-gray-700">{objetivo}</span>
+                    <Target className="w-5 h-5 text-primary mr-3 mt-0.5 flex-shrink-0" />
+                    <span className="text-gray-700 dark:text-gray-300">{objetivo}</span>
                   </li>
                 ))}
               </ul>
               
               <SectionTitle title="Perfil do Egresso" />
-              <p className="text-gray-700 mb-8 leading-relaxed">{curso.perfil}</p>
+              <p className="text-gray-700 dark:text-gray-300 mb-8 leading-relaxed">{curso.perfil}</p>
               
-              <SectionTitle title="Estrutura Curricular" />
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
-                <Card>
-                  <CardContent className="pt-6">
-                    <h4 className="font-semibold text-primary mb-3">1º e 2º Anos - Fundamentos</h4>
-                    <ul className="text-sm text-gray-600 space-y-1">
-                      <li>• Teoria da Comunicação</li>
-                      <li>• Técnicas de Redação</li>
-                      <li>• Fotografia e Linguagem Visual</li>
-                      <li>• Língua Portuguesa</li>
-                      <li>• Sociologia da Comunicação</li>
-                      <li>• Semiótica</li>
-                    </ul>
-                  </CardContent>
-                </Card>
-                <Card>
-                  <CardContent className="pt-6">
-                    <h4 className="font-semibold text-primary mb-3">3º e 4º Anos - Especialização</h4>
-                    <ul className="text-sm text-gray-600 space-y-1">
-                      <li>• Jornalismo Digital</li>
-                      <li>• Publicidade e Propaganda</li>
-                      <li>• Relações Públicas</li>
-                      <li>• Produção Audiovisual</li>
-                      <li>• Estágio Supervisionado</li>
-                      <li>• Trabalho de Conclusão de Curso</li>
-                    </ul>
-                  </CardContent>
-                </Card>
-              </div>
+              {estrutura && <EstruturaProgramatica estrutura={estrutura} />}
             </div>
             
             <div>
@@ -84,37 +59,37 @@ export default function ComunicacaoSocialPage() {
                   <h3 className="text-lg font-semibold text-primary mb-4">Informações</h3>
                   <div className="space-y-4">
                     <div className="flex items-center">
-                      <Clock className="w-5 h-5 text-secondary mr-3" />
+                      <Clock className="w-5 h-5 text-primary mr-3" />
                       <div>
-                        <p className="text-sm text-gray-500">Duração</p>
-                        <p className="font-medium">{curso.duracao}</p>
+                        <p className="text-sm text-gray-500 dark:text-gray-400">Duração</p>
+                        <p className="font-medium dark:text-gray-200">{curso.duracao}</p>
                       </div>
                     </div>
                     <div className="flex items-center">
-                      <User className="w-5 h-5 text-secondary mr-3" />
+                      <User className="w-5 h-5 text-primary mr-3" />
                       <div>
-                        <p className="text-sm text-gray-500">Coordenador</p>
-                        <p className="font-medium">{curso.coordenador}</p>
+                        <p className="text-sm text-gray-500 dark:text-gray-400">Coordenador</p>
+                        <p className="font-medium dark:text-gray-200">{curso.coordenador}</p>
                       </div>
                     </div>
                     <div className="flex items-center">
-                      <BookOpen className="w-5 h-5 text-secondary mr-3" />
+                      <BookOpen className="w-5 h-5 text-primary mr-3" />
                       <div>
-                        <p className="text-sm text-gray-500">Grau</p>
-                        <p className="font-medium">Licenciatura</p>
+                        <p className="text-sm text-gray-500 dark:text-gray-400">Grau</p>
+                        <p className="font-medium dark:text-gray-200">Licenciatura</p>
                       </div>
                     </div>
                     <div className="flex items-center">
-                      <Briefcase className="w-5 h-5 text-secondary mr-3" />
+                      <Briefcase className="w-5 h-5 text-primary mr-3" />
                       <div>
-                        <p className="text-sm text-gray-500">Regime</p>
-                        <p className="font-medium">Presencial</p>
+                        <p className="text-sm text-gray-500 dark:text-gray-400">Regime</p>
+                        <p className="font-medium dark:text-gray-200">Presencial</p>
                       </div>
                     </div>
                   </div>
                   
                   <div className="mt-6 pt-6 border-t">
-                    <p className="text-sm font-medium text-gray-700 mb-3">Áreas de Atuação</p>
+                    <p className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-3">Áreas de Atuação</p>
                     <div className="flex flex-wrap gap-2">
                       {curso.areas.map((area, index) => (
                         <span

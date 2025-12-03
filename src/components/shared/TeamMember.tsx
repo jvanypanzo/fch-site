@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import { Mail } from 'lucide-react'
 import { Card, CardContent } from '@/components/ui/Card'
 
@@ -9,9 +10,16 @@ interface TeamMemberProps {
   email?: string
   foto?: string
   departamento?: string
+  slug?: string
 }
 
-export function TeamMember({ nome, cargo, titulacao, areas, email, departamento }: TeamMemberProps) {
+export function TeamMember({ nome, cargo, titulacao, areas, email, departamento, slug }: TeamMemberProps) {
+  const nameContent = (
+    <h3 className="text-lg font-semibold text-center text-primary dark:text-blue-400 mb-1 hover:text-primary-dark transition-colors">
+      {nome}
+    </h3>
+  )
+
   return (
     <Card className="h-full">
       <CardContent className="pt-6">
@@ -20,7 +28,13 @@ export function TeamMember({ nome, cargo, titulacao, areas, email, departamento 
             {nome.split(' ').map(n => n[0]).slice(0, 2).join('')}
           </span>
         </div>
-        <h3 className="text-lg font-semibold text-center text-primary dark:text-blue-400 mb-1">{nome}</h3>
+        {slug ? (
+          <Link href={`/corpo-docente/${slug}`}>
+            {nameContent}
+          </Link>
+        ) : (
+          nameContent
+        )}
         {cargo && <p className="text-sm text-secondary text-center font-medium">{cargo}</p>}
         {titulacao && <p className="text-sm text-gray-600 dark:text-gray-400 text-center">{titulacao}</p>}
         {departamento && <p className="text-sm text-gray-500 dark:text-gray-500 text-center">Departamento de {departamento}</p>}
