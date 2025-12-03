@@ -14,13 +14,17 @@ body {
 
 @layer base {
   :root {
-    --background: 255 255 255;
-    --foreground: 30 41 59;
+    --primary: #F5A623;
+    --primary-dark: #D4920A;
+    --primary-light: #FFD35A;
+    --background: #FFFFFF;
+    --foreground: #1A1A1A;
   }
 
   .dark {
-    --background: 17 24 39;
-    --foreground: 248 250 252;
+    --background: #111827;
+    --foreground: #F9FAFB;
+    --primary: #F5A623;
   }
 
   * {

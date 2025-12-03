@@ -10,9 +10,18 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        primary: { DEFAULT: '#1e3a5f', light: '#2d5a8a' },
-        secondary: '#c9a227',
-        accent: '#e85d04',
+        primary: { 
+          DEFAULT: '#F5A623',
+          dark: '#D4920A',
+          light: '#FFD35A',
+        },
+        secondary: '#FFFFFF',
+        accent: '#1A1A1A',
+        ucan: {
+          gold: '#F5A623',
+          white: '#FFFFFF',
+          black: '#1A1A1A',
+        }
       },
       fontFamily: {
         sans: ['Inter', 'sans-serif'],

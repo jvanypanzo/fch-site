@@ -11,7 +11,7 @@ export function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
   return (
-    <header className="sticky top-0 z-50 bg-white dark:bg-gray-800 shadow-md">
+    <header className="sticky top-0 z-50 bg-white dark:bg-gray-800 shadow-md border-b-4 border-primary">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
@@ -20,7 +20,7 @@ export function Header() {
               <span className="text-white font-bold text-lg">F</span>
             </div>
             <div className="hidden sm:block">
-              <span className="text-primary dark:text-blue-400 font-bold text-lg">FCSH</span>
+              <span className="text-primary dark:text-primary font-bold text-lg">FCSH</span>
               <span className="hidden md:inline text-gray-600 dark:text-gray-400 text-sm ml-2">
                 Faculdade de Ciências Sociais e Humanas
               </span>
@@ -33,7 +33,7 @@ export function Header() {
               <div key={item.href} className="relative group">
                 <Link
                   href={item.href}
-                  className="px-3 py-2 text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-blue-400 hover:bg-gray-50 dark:hover:bg-gray-700 rounded-md inline-flex items-center"
+                  className="px-3 py-2 text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary hover:bg-gray-50 dark:hover:bg-gray-700 rounded-md inline-flex items-center"
                 >
                   {item.title}
                   {item.children && <ChevronDown className="ml-1 w-4 h-4" />}
@@ -44,7 +44,7 @@ export function Header() {
                       <Link
                         key={child.href}
                         href={child.href}
-                        className="block px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 hover:text-primary dark:hover:text-blue-400"
+                        className="block px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 hover:text-primary dark:hover:text-primary"
                       >
                         {child.title}
                       </Link>
@@ -56,7 +56,7 @@ export function Header() {
             <ThemeToggle />
             <Link
               href="/contato"
-              className="ml-4 px-4 py-2 bg-secondary text-white font-medium rounded-md hover:bg-secondary/90 transition-colors"
+              className="ml-4 px-4 py-2 bg-primary text-white font-medium rounded-md hover:bg-primary-dark transition-colors"
             >
               Contato
             </Link>
