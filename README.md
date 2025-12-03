@@ -1,6 +1,6 @@
-# FCSH - Faculdade de Ciências Sociais e Humanas
+# FCSH - Faculdade de Ciências Humanas
 
-Site institucional completo para a Faculdade de Ciências Sociais e Humanas (FCSH).
+Site institucional completo para a Faculdade de Ciências  Humanas (FCH).
 
 ## 🛠️ Tecnologias
 
