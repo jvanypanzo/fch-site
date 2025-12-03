@@ -17,11 +17,6 @@ const config: Config = {
         },
         secondary: '#FFFFFF',
         accent: '#1A1A1A',
-        ucan: {
-          gold: '#F5A623',
-          white: '#FFFFFF',
-          black: '#1A1A1A',
-        }
       },
       fontFamily: {
         sans: ['Inter', 'sans-serif'],
