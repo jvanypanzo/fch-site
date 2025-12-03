@@ -15,14 +15,14 @@ export function Header() {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
-          <Link href="/" className="flex items-center space-x-2">
+          <Link href="logo.jpeg" className="flex items-center space-x-2">
             <div className="w-10 h-10 bg-primary rounded-full flex items-center justify-center">
               <span className="text-white font-bold text-lg">F</span>
             </div>
             <div className="hidden sm:block">
               <span className="text-primary dark:text-primary font-bold text-lg">FCSH</span>
               <span className="hidden md:inline text-gray-600 dark:text-gray-400 text-sm ml-2">
-                Faculdade de Ciências Sociais e Humanas
+                Faculdade de Ciências Humanas
               </span>
             </div>
           </Link>

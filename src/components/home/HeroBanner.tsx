@@ -12,7 +12,7 @@ export function HeroBanner() {
       <div className="container mx-auto px-4 py-16 relative z-10">
         <div className="max-w-4xl">
           <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white mb-6">
-            Faculdade de Ciências Sociais e Humanas
+            Faculdade de Ciências Humanas
           </h1>
           <p className="text-lg md:text-xl lg:text-2xl text-gray-200 dark:text-gray-300 mb-8 max-w-2xl">
             Formando profissionais que transformam a sociedade

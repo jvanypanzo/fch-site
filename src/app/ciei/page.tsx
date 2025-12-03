@@ -6,7 +6,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/Card'
 
 export const metadata: Metadata = {
   title: 'CIEI - Centro de Investigação',
-  description: 'Centro de Investigação e Estudos Interdisciplinares da FCSH.',
+  description: 'Centro de Investigação e Estudos Interdisciplinares.',
 }
 
 const sections = [
@@ -42,10 +42,7 @@ export default function CIEIPage() {
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto mb-12">
             <p className="text-lg text-gray-700 leading-relaxed mb-6">
-              O Centro de Investigação e Estudos Interdisciplinares (CIEI) é a unidade de investigação 
-              da FCSH dedicada ao desenvolvimento de projetos científicos nas áreas das Ciências 
-              Sociais e Humanas. O CIEI promove a investigação de qualidade, a formação de 
-              investigadores e a disseminação do conhecimento.
+              O Centro Interdisciplinar de Estudos e Investigação- CIEI é uma unidade de pesquisa, vinculada a Faculdade de Ciências Humanas e ao Instituto de Ciências da Saúde, recém criada na Universidade Católica de Angola. Criado em Outubro de 2020, suas principais tarefas têm sido a de investigar e promover eventos sobre fenômenos sociais visando o debate e o encaminhamento de soluções, fomentar a literacia científica (através de formações que envolvem docentes e estudantes), e formar pesquisadores para o futuro (por meio de Programas de Iniciação Científica, em que estes aprendem a construir projectos de pesquisa, a os executar e a divulgá-los, por intermédio da participação em eventos, feiras científicas e da elaboração e submissão de artigos em revistas conceituadas nacionais e internacionais).
             </p>
             <div className="bg-primary/5 rounded-lg p-6">
               <h3 className="font-semibold text-primary mb-2">Linhas de Investigação</h3>
