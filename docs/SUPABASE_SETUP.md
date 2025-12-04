@@ -144,6 +144,31 @@ CREATE POLICY "Permitir inserção para admins" ON professores
   WITH CHECK (auth.role() = 'authenticated');
 ```
 
+## Usando as Funções de Query
+
+As funções de query estão disponíveis em `src/lib/queries/`. Exemplos de uso:
+
+```typescript
+import { getProfessores, getProfessorBySlug } from '@/lib/queries/professores'
+import { getCursos, getCursoBySlug } from '@/lib/queries/cursos'
+import { getDecana } from '@/lib/queries/decana'
+import { getEventos } from '@/lib/queries/eventos'
+import { getNoticias, getNoticiaBySlug } from '@/lib/queries/noticias'
+
+// Em um Server Component ou Route Handler:
+async function MyPage() {
+  const professores = await getProfessores()
+  const professor = await getProfessorBySlug('antonio-silva')
+  const decana = await getDecana()
+  const eventos = await getEventos(5) // limitar a 5 eventos
+  const noticias = await getNoticias(10) // limitar a 10 notícias
+  
+  // ...
+}
+```
+
+**Nota:** Atualmente, o site usa dados estáticos em `src/data/`. Após configurar o Supabase e popular as tabelas, você pode migrar gradualmente os componentes para usar as funções de query.
+
 ## Troubleshooting
 
 ### Erro de conexão

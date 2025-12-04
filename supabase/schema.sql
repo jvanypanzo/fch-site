@@ -98,6 +98,8 @@ CREATE INDEX idx_eventos_data ON eventos(data);
 
 -- Habilitar RLS (Row Level Security)
 ALTER TABLE professores ENABLE ROW LEVEL SECURITY;
+ALTER TABLE formacao ENABLE ROW LEVEL SECURITY;
+ALTER TABLE publicacao ENABLE ROW LEVEL SECURITY;
 ALTER TABLE cursos ENABLE ROW LEVEL SECURITY;
 ALTER TABLE disciplinas ENABLE ROW LEVEL SECURITY;
 ALTER TABLE decana ENABLE ROW LEVEL SECURITY;
@@ -106,6 +108,8 @@ ALTER TABLE noticias ENABLE ROW LEVEL SECURITY;
 
 -- Políticas de leitura pública
 CREATE POLICY "Permitir leitura pública de professores" ON professores FOR SELECT USING (true);
+CREATE POLICY "Permitir leitura pública de formacao" ON formacao FOR SELECT USING (true);
+CREATE POLICY "Permitir leitura pública de publicacao" ON publicacao FOR SELECT USING (true);
 CREATE POLICY "Permitir leitura pública de cursos" ON cursos FOR SELECT USING (true);
 CREATE POLICY "Permitir leitura pública de disciplinas" ON disciplinas FOR SELECT USING (true);
 CREATE POLICY "Permitir leitura pública de decana" ON decana FOR SELECT USING (true);
