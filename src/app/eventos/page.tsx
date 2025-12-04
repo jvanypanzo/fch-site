@@ -6,6 +6,8 @@ import { SectionTitle } from '@/components/shared/SectionTitle'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/Card'
 import { getEventosFuturos, getEventosRealizados } from '@/lib/queries/eventos'
 
+export const revalidate = 60 // Revalida cache a cada 60 segundos
+
 export const metadata: Metadata = {
   title: 'Eventos',
   description: 'Conferências, seminários, workshops e eventos culturais da FCH.',

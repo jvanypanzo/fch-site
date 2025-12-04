@@ -10,6 +10,8 @@ import { Button } from '@/components/ui/Button'
 import { getProfessorBySlug, getAllProfessorSlugs } from '@/lib/queries/professores'
 import { getDisciplinasByProfessor } from '@/lib/queries/disciplinas'
 
+export const revalidate = 60 // Revalida cache a cada 60 segundos
+
 interface PageProps {
   params: Promise<{ slug: string }>
 }

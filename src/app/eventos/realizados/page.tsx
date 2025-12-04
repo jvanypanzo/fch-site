@@ -4,6 +4,8 @@ import { PageHeader } from '@/components/shared/PageHeader'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/Card'
 import { getEventosRealizados } from '@/lib/queries/eventos'
 
+export const revalidate = 60 // Revalida cache a cada 60 segundos
+
 export const metadata: Metadata = {
   title: 'Eventos Realizados',
   description: 'Histórico de eventos realizados pela FCH.',

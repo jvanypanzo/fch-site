@@ -6,6 +6,8 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/Card'
 import { Button } from '@/components/ui/Button'
 import { getCursosPosGraduacao } from '@/lib/queries/cursos'
 
+export const revalidate = 60 // Revalida cache a cada 60 segundos
+
 export const metadata: Metadata = {
   title: 'Cursos de Pós-Graduação',
   description: 'Mestrados oferecidos pela FCH - Psicologia Clínica e Gestão Social.',

@@ -9,6 +9,8 @@ import { Button } from '@/components/ui/Button'
 import { EstruturaProgramatica } from '@/components/cursos/EstruturaProgramatica'
 import { getCursoBySlug, getEstruturaCurricular } from '@/lib/queries/cursos'
 
+export const revalidate = 60 // Revalida cache a cada 60 segundos
+
 export const metadata: Metadata = {
   title: 'Licenciatura em Psicologia Clínica',
   description: 'O curso de Psicologia Clínica forma profissionais capacitados para compreender, avaliar e intervir em processos de saúde mental.',

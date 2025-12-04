@@ -8,6 +8,8 @@ import { Card, CardContent } from '@/components/ui/Card'
 import { Button } from '@/components/ui/Button'
 import { getCursoBySlug } from '@/lib/queries/cursos'
 
+export const revalidate = 60 // Revalida cache a cada 60 segundos
+
 export const metadata: Metadata = {
   title: 'Mestrado em Psicologia Clínica',
   description: 'O Mestrado em Psicologia Clínica forma especialistas em avaliação, diagnóstico e intervenção psicológica.',

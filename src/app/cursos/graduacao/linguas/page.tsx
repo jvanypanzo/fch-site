@@ -9,6 +9,8 @@ import { Button } from '@/components/ui/Button'
 import { EstruturaProgramatica } from '@/components/cursos/EstruturaProgramatica'
 import { getCursoBySlug, getEstruturaCurricular } from '@/lib/queries/cursos'
 
+export const revalidate = 60 // Revalida cache a cada 60 segundos
+
 export const metadata: Metadata = {
   title: 'Licenciatura em Línguas',
   description: 'O curso de Línguas forma profissionais capacitados para atuar nas áreas de tradução, interpretação, ensino de línguas e comunicação intercultural.',
