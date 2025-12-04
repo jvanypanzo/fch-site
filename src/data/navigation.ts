@@ -28,10 +28,9 @@ export const navigationItems: NavItem[] = [
         title: 'Graduação',
         href: '/cursos/graduacao',
         children: [
-          { title: 'Psicologia', href: '/cursos/graduacao/psicologia' },
-          { title: 'Serviço Social', href: '/cursos/graduacao/servico-social' },
-          { title: 'Sociologia', href: '/cursos/graduacao/sociologia' },
-          { title: 'Comunicação Social', href: '/cursos/graduacao/comunicacao-social' },
+          { title: 'Psicologia do Trabalho e das Organizações', href: '/cursos/graduacao/psicologia-trabalho-organizacoes' },
+          { title: 'Psicologia Clínica', href: '/cursos/graduacao/psicologia-clinica' },
+          { title: 'Línguas', href: '/cursos/graduacao/linguas' },
         ],
       },
       {
