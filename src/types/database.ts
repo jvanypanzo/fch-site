@@ -9,6 +9,8 @@ export interface Professor {
   linkedin?: string
   foto_url?: string
   biografia?: string
+  areas_investigacao?: string[]
+  gabinete?: string
   created_at: string
 }
 
@@ -35,6 +37,11 @@ export interface Curso {
   descricao?: string
   duracao?: string
   grau?: string
+  tipo?: string
+  objetivos?: string[]
+  perfil_graduado?: string
+  saidas_profissionais?: string[]
+  coordenador_id?: string
   pdf_url?: string
   created_at: string
 }
@@ -44,10 +51,17 @@ export interface Disciplina {
   curso_id: string
   professor_id?: string
   nome: string
+  slug: string
+  codigo?: string
   ano: number
   semestre: number
   creditos?: number
   horas?: number
+  carga_horaria_teorica?: number
+  carga_horaria_pratica?: number
+  ementa?: string
+  objetivos?: string
+  bibliografia?: string
 }
 
 export interface Decana {

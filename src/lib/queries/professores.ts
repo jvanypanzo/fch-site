@@ -245,8 +245,6 @@ export async function getProfessores(): Promise<ProfessorDisplay[]> {
     
     if (error) throw error
     // Transform database result to display format
-    // Note: areas, formacao, disciplinas, and publicacoes may need separate queries
-    // or the database schema may need to be extended to include these fields
     return (data as Professor[]).map(p => {
       // Try to find fallback data for additional fields not in the database
       const fallback = fallbackProfessores.find(f => f.slug === p.slug)
@@ -255,7 +253,7 @@ export async function getProfessores(): Promise<ProfessorDisplay[]> {
         slug: p.slug,
         nome: p.nome,
         titulacao: p.titulo || fallback?.titulacao || '',
-        areas: fallback?.areas || [],
+        areas: p.areas_investigacao || fallback?.areas || [],
         email: p.email || fallback?.email || '',
         foto_url: p.foto_url || fallback?.foto_url,
         departamento: p.departamento || fallback?.departamento || '',
@@ -264,12 +262,10 @@ export async function getProfessores(): Promise<ProfessorDisplay[]> {
         disciplinas: fallback?.disciplinas || [],
         publicacoes: fallback?.publicacoes || [],
         telefone: p.telefone || fallback?.telefone,
-        gabinete: fallback?.gabinete
+        gabinete: p.gabinete || fallback?.gabinete
       }
     })
   } catch {
-    // Silently fall back to inline data on error to ensure the page still renders
-    // This is intentional - we prioritize showing content over error logging
     return fallbackProfessores
   }
 }
@@ -318,7 +314,7 @@ export async function getProfessorBySlug(slug: string): Promise<ProfessorDisplay
       slug: professor.slug,
       nome: professor.nome,
       titulacao: professor.titulo || fallback?.titulacao || '',
-      areas: fallback?.areas || [],
+      areas: professor.areas_investigacao || fallback?.areas || [],
       email: professor.email || fallback?.email || '',
       foto_url: professor.foto_url || fallback?.foto_url,
       departamento: professor.departamento || fallback?.departamento || '',
@@ -327,11 +323,9 @@ export async function getProfessorBySlug(slug: string): Promise<ProfessorDisplay
       disciplinas: fallback?.disciplinas || [],
       publicacoes,
       telefone: professor.telefone || fallback?.telefone,
-      gabinete: fallback?.gabinete
+      gabinete: professor.gabinete || fallback?.gabinete
     }
   } catch {
-    // Silently fall back to inline data on error to ensure the page still renders
-    // This is intentional - we prioritize showing content over error logging
     return getFallbackProfessorBySlug(slug) || null
   }
 }

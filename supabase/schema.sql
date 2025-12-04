@@ -10,6 +10,8 @@ CREATE TABLE professores (
   linkedin VARCHAR(255),
   foto_url TEXT,
   biografia TEXT,
+  areas_investigacao TEXT[],
+  gabinete VARCHAR(100),
   created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
 );
 
@@ -39,6 +41,11 @@ CREATE TABLE cursos (
   descricao TEXT,
   duracao VARCHAR(50),
   grau VARCHAR(100),
+  tipo VARCHAR(50) DEFAULT 'graduacao',
+  objetivos TEXT[],
+  perfil_graduado TEXT,
+  saidas_profissionais TEXT[],
+  coordenador_id UUID REFERENCES professores(id) ON DELETE SET NULL,
   pdf_url TEXT,
   created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
 );
@@ -49,10 +56,17 @@ CREATE TABLE disciplinas (
   curso_id UUID REFERENCES cursos(id) ON DELETE CASCADE,
   professor_id UUID REFERENCES professores(id) ON DELETE SET NULL,
   nome VARCHAR(255) NOT NULL,
+  slug VARCHAR(255) UNIQUE NOT NULL,
+  codigo VARCHAR(50),
   ano INTEGER NOT NULL,
   semestre INTEGER NOT NULL,
   creditos INTEGER,
-  horas INTEGER
+  horas INTEGER,
+  carga_horaria_teorica INTEGER,
+  carga_horaria_pratica INTEGER,
+  ementa TEXT,
+  objetivos TEXT,
+  bibliografia TEXT
 );
 
 -- Tabela da Decana
@@ -92,6 +106,7 @@ CREATE TABLE noticias (
 CREATE INDEX idx_professores_slug ON professores(slug);
 CREATE INDEX idx_cursos_slug ON cursos(slug);
 CREATE INDEX idx_noticias_slug ON noticias(slug);
+CREATE INDEX idx_disciplinas_slug ON disciplinas(slug);
 CREATE INDEX idx_disciplinas_curso ON disciplinas(curso_id);
 CREATE INDEX idx_disciplinas_professor ON disciplinas(professor_id);
 CREATE INDEX idx_eventos_data ON eventos(data);

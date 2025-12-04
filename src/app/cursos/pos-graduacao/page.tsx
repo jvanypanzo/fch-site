@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 }
 
 export default async function PosGraduacaoPage() {
-  const cursosPosGraduacao = getCursosPosGraduacao()
+  const cursosPosGraduacao = await getCursosPosGraduacao()
 
   return (
     <>
