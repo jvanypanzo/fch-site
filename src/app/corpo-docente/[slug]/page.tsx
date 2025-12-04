@@ -4,6 +4,7 @@ import { notFound } from 'next/navigation'
 import { Mail, Phone, MapPin, BookOpen, GraduationCap, FileText, ArrowLeft } from 'lucide-react'
 import { PageHeader } from '@/components/shared/PageHeader'
 import { SectionTitle } from '@/components/shared/SectionTitle'
+import { Avatar } from '@/components/shared/Avatar'
 import { Card, CardContent } from '@/components/ui/Card'
 import { Button } from '@/components/ui/Button'
 import { getProfessorBySlug, getAllProfessorSlugs } from '@/lib/queries/professores'
@@ -62,11 +63,9 @@ export default async function ProfessorPage({ params }: PageProps) {
             <div className="lg:col-span-1">
               <Card className="sticky top-24">
                 <CardContent className="pt-6">
-                  {/* Profile photo placeholder */}
-                  <div className="w-32 h-32 rounded-full bg-gradient-to-br from-primary to-primary-dark flex items-center justify-center mb-4 mx-auto">
-                    <span className="text-4xl font-bold text-white">
-                      {professor.nome.split(' ').map(n => n[0]).slice(0, 2).join('')}
-                    </span>
+                  {/* Profile photo */}
+                  <div className="flex justify-center mb-4">
+                    <Avatar src={professor.foto_url} name={professor.nome} size="lg" />
                   </div>
                   
                   <h2 className="text-xl font-semibold text-center text-primary dark:text-primary mb-1">

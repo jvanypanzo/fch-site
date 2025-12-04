@@ -10,6 +10,7 @@ export interface ProfessorDisplay {
   areas: string[]
   email: string
   foto?: string
+  foto_url?: string | null
   departamento: string
   biografia: string
   formacao: string[]
@@ -256,6 +257,7 @@ export async function getProfessores(): Promise<ProfessorDisplay[]> {
         titulacao: p.titulo || fallback?.titulacao || '',
         areas: fallback?.areas || [],
         email: p.email || fallback?.email || '',
+        foto_url: p.foto_url || fallback?.foto_url,
         departamento: p.departamento || fallback?.departamento || '',
         biografia: p.biografia || fallback?.biografia || '',
         formacao: fallback?.formacao || [],
@@ -318,6 +320,7 @@ export async function getProfessorBySlug(slug: string): Promise<ProfessorDisplay
       titulacao: professor.titulo || fallback?.titulacao || '',
       areas: fallback?.areas || [],
       email: professor.email || fallback?.email || '',
+      foto_url: professor.foto_url || fallback?.foto_url,
       departamento: professor.departamento || fallback?.departamento || '',
       biografia: professor.biografia || fallback?.biografia || '',
       formacao,

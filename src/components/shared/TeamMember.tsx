@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { Mail } from 'lucide-react'
 import { Card, CardContent } from '@/components/ui/Card'
+import { Avatar } from '@/components/shared/Avatar'
 
 interface TeamMemberProps {
   nome: string
@@ -9,11 +10,12 @@ interface TeamMemberProps {
   areas?: string[]
   email?: string
   foto?: string
+  foto_url?: string | null
   departamento?: string
   slug?: string
 }
 
-export function TeamMember({ nome, cargo, titulacao, areas, email, departamento, slug }: TeamMemberProps) {
+export function TeamMember({ nome, cargo, titulacao, areas, email, foto_url, departamento, slug }: TeamMemberProps) {
   const nameContent = (
     <h3 className="text-lg font-semibold text-center text-primary dark:text-blue-400 mb-1 hover:text-primary-dark transition-colors">
       {nome}
@@ -23,10 +25,8 @@ export function TeamMember({ nome, cargo, titulacao, areas, email, departamento,
   return (
     <Card className="h-full">
       <CardContent className="pt-6">
-        <div className="w-20 h-20 rounded-full bg-gray-200 dark:bg-gray-700 flex items-center justify-center mb-4 mx-auto">
-          <span className="text-2xl font-bold text-gray-500 dark:text-gray-400">
-            {nome.split(' ').map(n => n[0]).slice(0, 2).join('')}
-          </span>
+        <div className="flex justify-center mb-4">
+          <Avatar src={foto_url} name={nome} size="sm" className="!w-20 !h-20" />
         </div>
         {slug ? (
           <Link href={`/corpo-docente/${slug}`}>

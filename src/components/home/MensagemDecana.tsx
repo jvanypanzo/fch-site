@@ -1,5 +1,6 @@
 import { Card, CardContent } from '@/components/ui/Card'
 import { SectionTitle } from '@/components/shared/SectionTitle'
+import { Avatar } from '@/components/shared/Avatar'
 import { getDecana } from '@/lib/queries/decana'
 
 export default async function MensagemDecana() {
@@ -18,11 +19,7 @@ export default async function MensagemDecana() {
           <CardContent className="pt-6">
             <div className="flex flex-col md:flex-row gap-6 items-start">
               <div className="w-full md:w-1/3 flex flex-col items-center">
-                <div className="w-40 h-40 rounded-full bg-gradient-to-br from-primary to-primary-dark flex items-center justify-center mb-4">
-                  <span className="text-4xl font-bold text-white">
-                    {decana.nome.split(' ').map(n => n[0]).slice(0, 2).join('')}
-                  </span>
-                </div>
+                <Avatar src={decana.foto_url} name={decana.nome} size="xl" className="mb-4" />
                 <h3 className="text-lg font-semibold text-center text-primary dark:text-primary">
                   {decana.nome}
                 </h3>
