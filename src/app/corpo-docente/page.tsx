@@ -29,7 +29,7 @@ export default async function CorpoDocentePage() {
             
             return (
               <div key={departamento} className="mb-12 last:mb-0">
-                <SectionTitle title={`Departamento de ${departamento}`} />
+            
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
                   {docentesDept.map((docente) => (
                     <TeamMember

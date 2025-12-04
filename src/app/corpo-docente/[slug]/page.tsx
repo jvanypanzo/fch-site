@@ -52,7 +52,6 @@ export default async function ProfessorPage({ params }: PageProps) {
     <>
       <PageHeader
         title={professor.nome}
-        description={`${professor.titulacao} | Departamento de ${professor.departamento}`}
       />
       
       <section className="py-16">
@@ -78,9 +77,7 @@ export default async function ProfessorPage({ params }: PageProps) {
                   <p className="text-sm text-gray-600 dark:text-gray-400 text-center mb-4">
                     {professor.titulacao}
                   </p>
-                  <p className="text-sm text-gray-500 dark:text-gray-500 text-center mb-6">
-                    Departamento de {professor.departamento}
-                  </p>
+               
 
                   <div className="border-t pt-4 space-y-3">
                     <h3 className="font-semibold text-gray-900 dark:text-gray-100 mb-3">Contactos</h3>
@@ -168,7 +165,7 @@ export default async function ProfessorPage({ params }: PageProps) {
                           <li key={disciplina.id} className="flex items-start">
                             <BookOpen className="w-5 h-5 text-primary mr-3 mt-0.5 flex-shrink-0" />
                             <span className="text-gray-700 dark:text-gray-300">
-                              {disciplina.nome} - {disciplina.curso.nome} ({disciplina.ano}º Ano, {disciplina.semestre}º Semestre)
+                              {disciplina.nome} - {disciplina.curso.nome} ({disciplina.ano}º Ano)
                             </span>
                           </li>
                         ))}
