@@ -5,6 +5,8 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/Card'
 import { Button } from '@/components/ui/Button'
 import { getEventosFuturos } from '@/lib/queries/eventos'
 
+export const revalidate = 60 // Revalida cache a cada 60 segundos
+
 export const metadata: Metadata = {
   title: 'Eventos Futuros',
   description: 'Próximos eventos da FCH - Conferências, seminários, workshops e eventos culturais.',

@@ -6,6 +6,8 @@ import { SectionTitle } from '@/components/shared/SectionTitle'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/Card'
 import { getCursosGraduacao, getCursosPosGraduacao } from '@/lib/queries/cursos'
 
+export const revalidate = 60 // Revalida cache a cada 60 segundos
+
 export const metadata: Metadata = {
   title: 'Cursos',
   description: 'Conheça os cursos de graduação e pós-graduação da FCH.',
