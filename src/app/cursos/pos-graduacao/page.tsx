@@ -4,14 +4,16 @@ import { ArrowRight, Clock, User } from 'lucide-react'
 import { PageHeader } from '@/components/shared/PageHeader'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/Card'
 import { Button } from '@/components/ui/Button'
-import { cursosPosGraduacao } from '@/data/cursos'
+import { getCursosPosGraduacao } from '@/lib/queries/cursos'
 
 export const metadata: Metadata = {
   title: 'Cursos de Pós-Graduação',
   description: 'Mestrados oferecidos pela FCSH - Psicologia Clínica e Gestão Social.',
 }
 
-export default function PosGraduacaoPage() {
+export default async function PosGraduacaoPage() {
+  const cursosPosGraduacao = getCursosPosGraduacao()
+
   return (
     <>
       <PageHeader

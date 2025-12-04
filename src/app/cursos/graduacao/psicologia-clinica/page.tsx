@@ -1,23 +1,27 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
+import { notFound } from 'next/navigation'
 import { Clock, User, Target, BookOpen, Briefcase } from 'lucide-react'
 import { PageHeader } from '@/components/shared/PageHeader'
 import { SectionTitle } from '@/components/shared/SectionTitle'
 import { Card, CardContent } from '@/components/ui/Card'
 import { Button } from '@/components/ui/Button'
 import { EstruturaProgramatica } from '@/components/cursos/EstruturaProgramatica'
-import { cursos } from '@/data/cursos'
-import { getEstruturaByCursoSlug } from '@/data/estrutura-curricular'
-
-const curso = cursos.find(c => c.slug === 'psicologia-clinica')!
-const estrutura = getEstruturaByCursoSlug('psicologia-clinica')
+import { getCursoBySlug, getEstruturaCurricular } from '@/lib/queries/cursos'
 
 export const metadata: Metadata = {
-  title: curso.nome,
-  description: curso.descricao,
+  title: 'Licenciatura em Psicologia Clínica',
+  description: 'O curso de Psicologia Clínica forma profissionais capacitados para compreender, avaliar e intervir em processos de saúde mental.',
 }
 
-export default function PsicologiaClinicaPage() {
+export default async function PsicologiaClinicaPage() {
+  const curso = await getCursoBySlug('psicologia-clinica')
+  const estrutura = await getEstruturaCurricular('psicologia-clinica')
+
+  if (!curso) {
+    notFound()
+  }
+
   return (
     <>
       <PageHeader

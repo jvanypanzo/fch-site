@@ -1,20 +1,25 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
+import { notFound } from 'next/navigation'
 import { Clock, User, Target, BookOpen, Briefcase } from 'lucide-react'
 import { PageHeader } from '@/components/shared/PageHeader'
 import { SectionTitle } from '@/components/shared/SectionTitle'
 import { Card, CardContent } from '@/components/ui/Card'
 import { Button } from '@/components/ui/Button'
-import { cursos } from '@/data/cursos'
-
-const curso = cursos.find(c => c.slug === 'mestrado-gestao-social')!
+import { getCursoBySlug } from '@/lib/queries/cursos'
 
 export const metadata: Metadata = {
-  title: curso.nome,
-  description: curso.descricao,
+  title: 'Mestrado em Gestão Social',
+  description: 'O Mestrado em Gestão Social forma profissionais especializados na gestão de organizações sociais, projetos de desenvolvimento e políticas públicas.',
 }
 
-export default function MestradoGestaoSocialPage() {
+export default async function MestradoGestaoSocialPage() {
+  const curso = await getCursoBySlug('mestrado-gestao-social')
+
+  if (!curso) {
+    notFound()
+  }
+
   return (
     <>
       <PageHeader

@@ -2,14 +2,16 @@ import { Metadata } from 'next'
 import { Calendar, MapPin } from 'lucide-react'
 import { PageHeader } from '@/components/shared/PageHeader'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/Card'
-import { eventosRealizados } from '@/data/eventos'
+import { getEventosRealizados } from '@/lib/queries/eventos'
 
 export const metadata: Metadata = {
   title: 'Eventos Realizados',
   description: 'Histórico de eventos realizados pela FCSH.',
 }
 
-export default function EventosRealizadosPage() {
+export default async function EventosRealizadosPage() {
+  const eventosRealizados = getEventosRealizados()
+
   return (
     <>
       <PageHeader

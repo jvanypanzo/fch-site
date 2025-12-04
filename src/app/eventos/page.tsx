@@ -4,14 +4,17 @@ import { ArrowRight, Calendar, Clock, MapPin } from 'lucide-react'
 import { PageHeader } from '@/components/shared/PageHeader'
 import { SectionTitle } from '@/components/shared/SectionTitle'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/Card'
-import { eventosFuturos, eventosRealizados } from '@/data/eventos'
+import { getEventosFuturos, getEventosRealizados } from '@/lib/queries/eventos'
 
 export const metadata: Metadata = {
   title: 'Eventos',
   description: 'Conferências, seminários, workshops e eventos culturais da FCSH.',
 }
 
-export default function EventosPage() {
+export default async function EventosPage() {
+  const eventosFuturos = getEventosFuturos()
+  const eventosRealizados = getEventosRealizados()
+
   return (
     <>
       <PageHeader

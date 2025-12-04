@@ -2,7 +2,7 @@ import { Metadata } from 'next'
 import { PageHeader } from '@/components/shared/PageHeader'
 import { SectionTitle } from '@/components/shared/SectionTitle'
 import { TeamMember } from '@/components/shared/TeamMember'
-import { professores } from '@/data/professores'
+import { getProfessores } from '@/lib/queries/professores'
 
 export const metadata: Metadata = {
   title: 'Corpo Docente',
@@ -11,7 +11,9 @@ export const metadata: Metadata = {
 
 const departamentos = ['Psicologia Clínica', 'Psicologia do Trabalho e das Organizações', 'Línguas']
 
-export default function CorpoDocentePage() {
+export default async function CorpoDocentePage() {
+  const professores = await getProfessores()
+
   return (
     <>
       <PageHeader

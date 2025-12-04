@@ -1,23 +1,27 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
+import { notFound } from 'next/navigation'
 import { Clock, User, Target, BookOpen, Briefcase } from 'lucide-react'
 import { PageHeader } from '@/components/shared/PageHeader'
 import { SectionTitle } from '@/components/shared/SectionTitle'
 import { Card, CardContent } from '@/components/ui/Card'
 import { Button } from '@/components/ui/Button'
 import { EstruturaProgramatica } from '@/components/cursos/EstruturaProgramatica'
-import { cursos } from '@/data/cursos'
-import { getEstruturaByCursoSlug } from '@/data/estrutura-curricular'
-
-const curso = cursos.find(c => c.slug === 'psicologia-trabalho-organizacoes')!
-const estrutura = getEstruturaByCursoSlug('psicologia-trabalho-organizacoes')
+import { getCursoBySlug, getEstruturaCurricular } from '@/lib/queries/cursos'
 
 export const metadata: Metadata = {
-  title: curso.nome,
-  description: curso.descricao,
+  title: 'Licenciatura em Psicologia do Trabalho e das Organizações',
+  description: 'O curso de Psicologia do Trabalho e das Organizações forma profissionais capacitados para compreender e intervir nos processos psicológicos em contextos organizacionais.',
 }
 
-export default function PsicologiaTrabalhoOrganizacoesPage() {
+export default async function PsicologiaTrabalhoOrganizacoesPage() {
+  const curso = await getCursoBySlug('psicologia-trabalho-organizacoes')
+  const estrutura = await getEstruturaCurricular('psicologia-trabalho-organizacoes')
+
+  if (!curso) {
+    notFound()
+  }
+
   return (
     <>
       <PageHeader

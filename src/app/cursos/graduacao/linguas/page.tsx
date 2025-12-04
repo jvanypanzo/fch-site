@@ -1,23 +1,27 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
+import { notFound } from 'next/navigation'
 import { Clock, User, Target, BookOpen, Briefcase } from 'lucide-react'
 import { PageHeader } from '@/components/shared/PageHeader'
 import { SectionTitle } from '@/components/shared/SectionTitle'
 import { Card, CardContent } from '@/components/ui/Card'
 import { Button } from '@/components/ui/Button'
 import { EstruturaProgramatica } from '@/components/cursos/EstruturaProgramatica'
-import { cursos } from '@/data/cursos'
-import { getEstruturaByCursoSlug } from '@/data/estrutura-curricular'
-
-const curso = cursos.find(c => c.slug === 'linguas')!
-const estrutura = getEstruturaByCursoSlug('linguas')
+import { getCursoBySlug, getEstruturaCurricular } from '@/lib/queries/cursos'
 
 export const metadata: Metadata = {
-  title: curso.nome,
-  description: curso.descricao,
+  title: 'Licenciatura em Línguas',
+  description: 'O curso de Línguas forma profissionais capacitados para atuar nas áreas de tradução, interpretação, ensino de línguas e comunicação intercultural.',
 }
 
-export default function LinguasPage() {
+export default async function LinguasPage() {
+  const curso = await getCursoBySlug('linguas')
+  const estrutura = await getEstruturaCurricular('linguas')
+
+  if (!curso) {
+    notFound()
+  }
+
   return (
     <>
       <PageHeader
