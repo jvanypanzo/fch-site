@@ -38,6 +38,7 @@ export default async function CorpoDocentePage() {
                       titulacao={docente.titulacao}
                       areas={docente.areas}
                       email={docente.email}
+                      foto_url={docente.foto_url}
                       departamento={docente.departamento}
                       slug={docente.slug}
                     />
