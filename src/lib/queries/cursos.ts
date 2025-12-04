@@ -1,4 +1,5 @@
 import { supabase, isSupabaseConfigured } from '@/lib/supabase'
+import type { Curso } from '@/types/database'
 
 // Course display interface for frontend
 export interface CursoDisplay {
@@ -12,10 +13,11 @@ export interface CursoDisplay {
   objetivos: string[]
   perfil: string
   areas: string[]
+  pdfUrl?: string
 }
 
-// Structure for curriculum
-export interface Disciplina {
+// Structure for curriculum (internal to this module)
+interface CurriculumDisciplina {
   nome: string
   professor: string
   professorSlug: string
@@ -24,7 +26,7 @@ export interface Disciplina {
 
 export interface Semestre {
   semestre: number
-  disciplinas: Disciplina[]
+  disciplinas: CurriculumDisciplina[]
 }
 
 export interface AnoCurricular {
@@ -57,6 +59,7 @@ const fallbackCursos: CursoDisplay[] = [
     ],
     perfil: 'O egresso será capaz de atuar em contextos organizacionais, desenvolvendo avaliações, intervenções e pesquisas na área da Psicologia do Trabalho, gestão de pessoas e comportamento organizacional.',
     areas: ['Psicologia Organizacional', 'Gestão de Recursos Humanos', 'Comportamento Organizacional', 'Saúde Ocupacional'],
+    pdfUrl: '/documentos/plano-curricular-psicologia-trabalho-organizacoes.pdf',
   },
   {
     id: '2',
@@ -74,6 +77,7 @@ const fallbackCursos: CursoDisplay[] = [
     ],
     perfil: 'O egresso será capaz de atuar em contextos clínicos e de saúde, desenvolvendo avaliações, diagnósticos e intervenções psicoterapêuticas.',
     areas: ['Psicologia Clínica', 'Avaliação Psicológica', 'Psicoterapia', 'Saúde Mental'],
+    pdfUrl: '/documentos/plano-curricular-psicologia-clinica.pdf',
   },
   {
     id: '3',
@@ -91,6 +95,7 @@ const fallbackCursos: CursoDisplay[] = [
     ],
     perfil: 'O egresso será capaz de atuar em tradução, interpretação, ensino de línguas, assessoria linguística e comunicação intercultural.',
     areas: ['Tradução', 'Interpretação', 'Ensino de Línguas', 'Literaturas'],
+    pdfUrl: '/documentos/plano-curricular-linguas.pdf',
   },
   {
     id: '4',
@@ -448,6 +453,24 @@ function getFallbackEstruturaByCursoSlug(slug: string): EstruturaCurricular | un
   return fallbackEstruturasCurriculares.find(e => e.cursoSlug === slug)
 }
 
+// Transform database curso to display format
+function transformCursoToDisplay(dbCurso: Curso & { coordenador?: { nome: string } | null }): CursoDisplay {
+  const tipo: 'graduacao' | 'pos-graduacao' = dbCurso.tipo === 'pos-graduacao' ? 'pos-graduacao' : 'graduacao'
+  return {
+    id: dbCurso.id,
+    nome: dbCurso.nome,
+    tipo,
+    duracao: dbCurso.duracao || '4 anos',
+    descricao: dbCurso.descricao || '',
+    coordenador: dbCurso.coordenador?.nome || '',
+    slug: dbCurso.slug,
+    objetivos: dbCurso.objetivos || [],
+    perfil: dbCurso.perfil_graduado || '',
+    areas: dbCurso.saidas_profissionais || [],
+    pdfUrl: dbCurso.pdf_url,
+  }
+}
+
 export async function getCursos(): Promise<CursoDisplay[]> {
   // Use fallback data if Supabase is not configured
   if (!isSupabaseConfigured || !supabase) {
@@ -457,37 +480,20 @@ export async function getCursos(): Promise<CursoDisplay[]> {
   try {
     const { data, error } = await supabase
       .from('cursos')
-      .select('*')
+      .select(`
+        *,
+        coordenador:professores!cursos_coordenador_id_fkey(nome)
+      `)
       .order('nome')
     
     if (error) throw error
     
-    // If we got data from Supabase, try to use it
-    // The database schema may differ from our display format, so we need to transform
-    // For now, merge with fallback data to ensure all fields are present
     if (data && data.length > 0) {
-      return data.map(dbCurso => {
-        // Find matching fallback to get additional fields not in database
-        const fallback = fallbackCursos.find(c => c.slug === dbCurso.slug)
-        return {
-          id: dbCurso.id,
-          nome: dbCurso.nome,
-          tipo: fallback?.tipo || 'graduacao',
-          duracao: dbCurso.duracao || fallback?.duracao || '4 anos',
-          descricao: dbCurso.descricao || fallback?.descricao || '',
-          coordenador: fallback?.coordenador || '',
-          slug: dbCurso.slug,
-          objetivos: fallback?.objetivos || [],
-          perfil: fallback?.perfil || '',
-          areas: fallback?.areas || [],
-        }
-      })
+      return data.map(transformCursoToDisplay)
     }
     
     return fallbackCursos
   } catch {
-    // Silently fall back to inline data on error to ensure the page still renders
-    // This is intentional - we prioritize showing content over error logging
     return fallbackCursos
   }
 }
@@ -501,34 +507,21 @@ export async function getCursoBySlug(slug: string): Promise<CursoDisplay | undef
   try {
     const { data, error } = await supabase
       .from('cursos')
-      .select('*')
+      .select(`
+        *,
+        coordenador:professores!cursos_coordenador_id_fkey(nome)
+      `)
       .eq('slug', slug)
       .single()
     
     if (error) throw error
     
-    // Find matching fallback to get additional fields not in database
-    const fallback = fallbackCursos.find(c => c.slug === slug)
-    
     if (data) {
-      return {
-        id: data.id,
-        nome: data.nome,
-        tipo: fallback?.tipo || 'graduacao',
-        duracao: data.duracao || fallback?.duracao || '4 anos',
-        descricao: data.descricao || fallback?.descricao || '',
-        coordenador: fallback?.coordenador || '',
-        slug: data.slug,
-        objetivos: fallback?.objetivos || [],
-        perfil: fallback?.perfil || '',
-        areas: fallback?.areas || [],
-      }
+      return transformCursoToDisplay(data)
     }
     
-    return fallback
+    return fallbackCursos.find(c => c.slug === slug)
   } catch {
-    // Silently fall back to inline data on error to ensure the page still renders
-    // This is intentional - we prioritize showing content over error logging
     return fallbackCursos.find(c => c.slug === slug)
   }
 }
@@ -540,26 +533,32 @@ export async function getEstruturaCurricular(cursoSlug: string): Promise<Estrutu
   }
 
   try {
+    // First get the curso to get its id and name
+    const { data: cursoData, error: cursoError } = await supabase
+      .from('cursos')
+      .select('id, nome, pdf_url')
+      .eq('slug', cursoSlug)
+      .single()
+    
+    if (cursoError) throw cursoError
+    if (!cursoData) return getFallbackEstruturaByCursoSlug(cursoSlug)
+
+    // Now fetch disciplinas using the curso id
     const { data, error } = await supabase
       .from('disciplinas')
       .select(`
         *,
         professor:professores(nome, slug)
       `)
-      .eq('curso_id', cursoSlug)
+      .eq('curso_id', cursoData.id)
       .order('ano')
       .order('semestre')
     
     if (error) throw error
     
-    // If we got data from Supabase, try to transform it
-    // The database structure is flat (disciplinas with ano/semestre), 
-    // while our display format is nested (anos > semestres > disciplinas)
     if (data && data.length > 0) {
-      const fallback = getFallbackEstruturaByCursoSlug(cursoSlug)
-      
       // Group disciplinas by ano and semestre
-      const anosMap = new Map<number, Map<number, Disciplina[]>>()
+      const anosMap = new Map<number, Map<number, CurriculumDisciplina[]>>()
       
       for (const disc of data) {
         const ano = disc.ano || 1
@@ -603,25 +602,30 @@ export async function getEstruturaCurricular(cursoSlug: string): Promise<Estrutu
       
       return {
         cursoSlug,
-        cursoNome: fallback?.cursoNome || '',
-        pdfUrl: fallback?.pdfUrl,
+        cursoNome: cursoData.nome,
+        pdfUrl: cursoData.pdf_url,
         anos,
       }
     }
     
     return getFallbackEstruturaByCursoSlug(cursoSlug)
   } catch {
-    // Silently fall back to inline data on error to ensure the page still renders
-    // This is intentional - we prioritize showing content over error logging
     return getFallbackEstruturaByCursoSlug(cursoSlug)
   }
 }
 
-// Helper functions for filtering
-export function getCursosGraduacao(): CursoDisplay[] {
-  return fallbackCursos.filter(c => c.tipo === 'graduacao')
+// Async helper functions for filtering by type
+export async function getCursosGraduacao(): Promise<CursoDisplay[]> {
+  const cursos = await getCursos()
+  return cursos.filter(c => c.tipo === 'graduacao')
 }
 
-export function getCursosPosGraduacao(): CursoDisplay[] {
-  return fallbackCursos.filter(c => c.tipo === 'pos-graduacao')
+export async function getCursosPosGraduacao(): Promise<CursoDisplay[]> {
+  const cursos = await getCursos()
+  return cursos.filter(c => c.tipo === 'pos-graduacao')
+}
+
+// Export all course slugs for static generation
+export function getAllCursoSlugs(): string[] {
+  return fallbackCursos.map(c => c.slug)
 }
