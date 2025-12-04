@@ -67,7 +67,7 @@ export function EstruturaProgramatica({ estrutura }: EstruturaProgramaticaProps)
                   {anoCurricular.semestres.map((semestre) => (
                     <div key={semestre.semestre} className="bg-gray-50 dark:bg-gray-700/30 rounded-lg p-4">
                       <h4 className="font-semibold text-gray-800 dark:text-gray-200 mb-4">
-                        {semestre.semestre}º Semestre
+                        {semestre.semestre}
                       </h4>
                       <div className="space-y-3">
                         {semestre.disciplinas.map((disciplina, index) => (
