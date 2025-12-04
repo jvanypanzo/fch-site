@@ -244,21 +244,27 @@ export async function getProfessores(): Promise<ProfessorDisplay[]> {
     
     if (error) throw error
     // Transform database result to display format
-    return (data as Professor[]).map(p => ({
-      id: p.id,
-      slug: p.slug,
-      nome: p.nome,
-      titulacao: p.titulo || '',
-      areas: [],
-      email: p.email || '',
-      departamento: p.departamento || '',
-      biografia: p.biografia || '',
-      formacao: [],
-      disciplinas: [],
-      publicacoes: [],
-      telefone: p.telefone,
-      gabinete: undefined
-    }))
+    // Note: areas, formacao, disciplinas, and publicacoes may need separate queries
+    // or the database schema may need to be extended to include these fields
+    return (data as Professor[]).map(p => {
+      // Try to find fallback data for additional fields not in the database
+      const fallback = fallbackProfessores.find(f => f.slug === p.slug)
+      return {
+        id: p.id,
+        slug: p.slug,
+        nome: p.nome,
+        titulacao: p.titulo || fallback?.titulacao || '',
+        areas: fallback?.areas || [],
+        email: p.email || fallback?.email || '',
+        departamento: p.departamento || fallback?.departamento || '',
+        biografia: p.biografia || fallback?.biografia || '',
+        formacao: fallback?.formacao || [],
+        disciplinas: fallback?.disciplinas || [],
+        publicacoes: fallback?.publicacoes || [],
+        telefone: p.telefone || fallback?.telefone,
+        gabinete: fallback?.gabinete
+      }
+    })
   } catch {
     // Silently fall back to inline data on error to ensure the page still renders
     // This is intentional - we prioritize showing content over error logging
@@ -286,26 +292,39 @@ export async function getProfessorBySlug(slug: string): Promise<ProfessorDisplay
     if (error) throw error
     
     // Transform to display format
+    // Get fallback data for fields that may not be in the database
+    const fallback = getFallbackProfessorBySlug(slug)
     const professor = data as Professor & { formacoes?: Array<{ grau: string; instituicao: string; ano?: string }>; publicacoes?: Array<{ titulo: string; ano?: string; revista?: string }> }
+    
+    // Parse formacao from database or use fallback
+    const formacao = professor.formacoes && professor.formacoes.length > 0
+      ? professor.formacoes.map(f => `${f.grau} - ${f.instituicao}${f.ano ? ` (${f.ano})` : ''}`)
+      : (fallback?.formacao || [])
+    
+    // Parse publicacoes from database or use fallback
+    const publicacoes = professor.publicacoes && professor.publicacoes.length > 0
+      ? professor.publicacoes.map(p => ({
+          titulo: p.titulo,
+          ano: p.ano ? parseInt(p.ano, 10) || new Date().getFullYear() : new Date().getFullYear(),
+          tipo: 'artigo' as const,
+          revista: p.revista
+        }))
+      : (fallback?.publicacoes || [])
+    
     return {
       id: professor.id,
       slug: professor.slug,
       nome: professor.nome,
-      titulacao: professor.titulo || '',
-      areas: [],
-      email: professor.email || '',
-      departamento: professor.departamento || '',
-      biografia: professor.biografia || '',
-      formacao: professor.formacoes?.map(f => `${f.grau} - ${f.instituicao}${f.ano ? ` (${f.ano})` : ''}`) || [],
-      disciplinas: [],
-      publicacoes: professor.publicacoes?.map(p => ({
-        titulo: p.titulo,
-        ano: parseInt(p.ano || '0'),
-        tipo: 'artigo' as const,
-        revista: p.revista
-      })) || [],
-      telefone: professor.telefone,
-      gabinete: undefined
+      titulacao: professor.titulo || fallback?.titulacao || '',
+      areas: fallback?.areas || [],
+      email: professor.email || fallback?.email || '',
+      departamento: professor.departamento || fallback?.departamento || '',
+      biografia: professor.biografia || fallback?.biografia || '',
+      formacao,
+      disciplinas: fallback?.disciplinas || [],
+      publicacoes,
+      telefone: professor.telefone || fallback?.telefone,
+      gabinete: fallback?.gabinete
     }
   } catch {
     // Silently fall back to inline data on error to ensure the page still renders

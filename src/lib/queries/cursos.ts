@@ -461,7 +461,29 @@ export async function getCursos(): Promise<CursoDisplay[]> {
       .order('nome')
     
     if (error) throw error
-    // Transform to display format - for simplicity returning fallback if no match
+    
+    // If we got data from Supabase, try to use it
+    // The database schema may differ from our display format, so we need to transform
+    // For now, merge with fallback data to ensure all fields are present
+    if (data && data.length > 0) {
+      return data.map(dbCurso => {
+        // Find matching fallback to get additional fields not in database
+        const fallback = fallbackCursos.find(c => c.slug === dbCurso.slug)
+        return {
+          id: dbCurso.id,
+          nome: dbCurso.nome,
+          tipo: fallback?.tipo || 'graduacao',
+          duracao: dbCurso.duracao || fallback?.duracao || '4 anos',
+          descricao: dbCurso.descricao || fallback?.descricao || '',
+          coordenador: fallback?.coordenador || '',
+          slug: dbCurso.slug,
+          objetivos: fallback?.objetivos || [],
+          perfil: fallback?.perfil || '',
+          areas: fallback?.areas || [],
+        }
+      })
+    }
+    
     return fallbackCursos
   } catch {
     // Silently fall back to inline data on error to ensure the page still renders
@@ -484,8 +506,26 @@ export async function getCursoBySlug(slug: string): Promise<CursoDisplay | undef
       .single()
     
     if (error) throw error
-    // Return fallback data that matches the slug
-    return fallbackCursos.find(c => c.slug === slug)
+    
+    // Find matching fallback to get additional fields not in database
+    const fallback = fallbackCursos.find(c => c.slug === slug)
+    
+    if (data) {
+      return {
+        id: data.id,
+        nome: data.nome,
+        tipo: fallback?.tipo || 'graduacao',
+        duracao: data.duracao || fallback?.duracao || '4 anos',
+        descricao: data.descricao || fallback?.descricao || '',
+        coordenador: fallback?.coordenador || '',
+        slug: data.slug,
+        objetivos: fallback?.objetivos || [],
+        perfil: fallback?.perfil || '',
+        areas: fallback?.areas || [],
+      }
+    }
+    
+    return fallback
   } catch {
     // Silently fall back to inline data on error to ensure the page still renders
     // This is intentional - we prioritize showing content over error logging
@@ -511,7 +551,64 @@ export async function getEstruturaCurricular(cursoSlug: string): Promise<Estrutu
       .order('semestre')
     
     if (error) throw error
-    // Return fallback structure for now
+    
+    // If we got data from Supabase, try to transform it
+    // The database structure is flat (disciplinas with ano/semestre), 
+    // while our display format is nested (anos > semestres > disciplinas)
+    if (data && data.length > 0) {
+      const fallback = getFallbackEstruturaByCursoSlug(cursoSlug)
+      
+      // Group disciplinas by ano and semestre
+      const anosMap = new Map<number, Map<number, Disciplina[]>>()
+      
+      for (const disc of data) {
+        const ano = disc.ano || 1
+        const semestre = disc.semestre || 1
+        
+        if (!anosMap.has(ano)) {
+          anosMap.set(ano, new Map())
+        }
+        const semestreMap = anosMap.get(ano)!
+        if (!semestreMap.has(semestre)) {
+          semestreMap.set(semestre, [])
+        }
+        
+        const professor = disc.professor as { nome?: string; slug?: string } | null
+        semestreMap.get(semestre)!.push({
+          nome: disc.nome,
+          professor: professor?.nome || 'A definir',
+          professorSlug: professor?.slug || '',
+          creditos: disc.creditos || 0,
+        })
+      }
+      
+      // Convert to our nested structure
+      const anos: AnoCurricular[] = []
+      const sortedAnos = Array.from(anosMap.keys()).sort((a, b) => a - b)
+      
+      for (const ano of sortedAnos) {
+        const semestreMap = anosMap.get(ano)!
+        const semestres: Semestre[] = []
+        const sortedSemestres = Array.from(semestreMap.keys()).sort((a, b) => a - b)
+        
+        for (const semestre of sortedSemestres) {
+          semestres.push({
+            semestre,
+            disciplinas: semestreMap.get(semestre)!,
+          })
+        }
+        
+        anos.push({ ano, semestres })
+      }
+      
+      return {
+        cursoSlug,
+        cursoNome: fallback?.cursoNome || '',
+        pdfUrl: fallback?.pdfUrl,
+        anos,
+      }
+    }
+    
     return getFallbackEstruturaByCursoSlug(cursoSlug)
   } catch {
     // Silently fall back to inline data on error to ensure the page still renders
