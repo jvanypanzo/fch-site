@@ -1,10 +1,10 @@
-'use client'
-
 import { Card, CardContent } from '@/components/ui/Card'
 import { SectionTitle } from '@/components/shared/SectionTitle'
-import { decana } from '@/data/decana'
+import { getDecana } from '@/lib/queries/decana'
 
-export function MensagemDecana() {
+export default async function MensagemDecana() {
+  const decana = await getDecana()
+
   return (
     <section className="py-16 bg-white dark:bg-gray-800">
       <div className="container mx-auto px-4">
@@ -33,7 +33,7 @@ export function MensagemDecana() {
               
               <div className="w-full md:w-2/3">
                 <div className="prose dark:prose-invert max-w-none">
-                  {decana.mensagem.split('\n\n').map((paragraph, index) => (
+                  {decana.mensagem?.split('\n\n').map((paragraph, index) => (
                     <p key={index} className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4 last:mb-0">
                       {paragraph}
                     </p>

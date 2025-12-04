@@ -4,14 +4,16 @@ import { ArrowRight, Clock, User } from 'lucide-react'
 import { PageHeader } from '@/components/shared/PageHeader'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/Card'
 import { Button } from '@/components/ui/Button'
-import { cursosGraduacao } from '@/data/cursos'
+import { getCursosGraduacao } from '@/lib/queries/cursos'
 
 export const metadata: Metadata = {
   title: 'Cursos de Graduação',
   description: 'Licenciaturas oferecidas pela FCSH - Psicologia do Trabalho e das Organizações, Psicologia Clínica e Línguas.',
 }
 
-export default function GraduacaoPage() {
+export default async function GraduacaoPage() {
+  const cursosGraduacao = getCursosGraduacao()
+
   return (
     <>
       <PageHeader

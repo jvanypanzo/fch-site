@@ -6,7 +6,7 @@ import { ChevronDown, Download, BookOpen } from 'lucide-react'
 import { Button } from '@/components/ui/Button'
 import { Card, CardContent } from '@/components/ui/Card'
 import { SectionTitle } from '@/components/shared/SectionTitle'
-import { EstruturaCurricular } from '@/data/estrutura-curricular'
+import { EstruturaCurricular } from '@/lib/queries/cursos'
 import { cn } from '@/lib/utils'
 
 interface EstruturaProgramaticaProps {

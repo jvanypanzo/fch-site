@@ -6,20 +6,22 @@ import { PageHeader } from '@/components/shared/PageHeader'
 import { SectionTitle } from '@/components/shared/SectionTitle'
 import { Card, CardContent } from '@/components/ui/Card'
 import { Button } from '@/components/ui/Button'
-import { professores, getProfessorBySlug } from '@/data/professores'
+import { getProfessorBySlug, getAllProfessorSlugs } from '@/lib/queries/professores'
 
 interface PageProps {
-  params: { slug: string }
+  params: Promise<{ slug: string }>
 }
 
 export async function generateStaticParams() {
-  return professores.map((professor) => ({
-    slug: professor.slug,
+  const slugs = getAllProfessorSlugs()
+  return slugs.map((slug) => ({
+    slug,
   }))
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
-  const professor = getProfessorBySlug(params.slug)
+  const { slug } = await params
+  const professor = await getProfessorBySlug(slug)
   
   if (!professor) {
     return {
@@ -33,8 +35,9 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   }
 }
 
-export default function ProfessorPage({ params }: PageProps) {
-  const professor = getProfessorBySlug(params.slug)
+export default async function ProfessorPage({ params }: PageProps) {
+  const { slug } = await params
+  const professor = await getProfessorBySlug(slug)
 
   if (!professor) {
     notFound()

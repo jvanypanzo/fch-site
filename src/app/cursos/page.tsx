@@ -4,14 +4,17 @@ import { ArrowRight, GraduationCap, Award } from 'lucide-react'
 import { PageHeader } from '@/components/shared/PageHeader'
 import { SectionTitle } from '@/components/shared/SectionTitle'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/Card'
-import { cursosGraduacao, cursosPosGraduacao } from '@/data/cursos'
+import { getCursosGraduacao, getCursosPosGraduacao } from '@/lib/queries/cursos'
 
 export const metadata: Metadata = {
   title: 'Cursos',
   description: 'Conheça os cursos de graduação e pós-graduação da FCSH.',
 }
 
-export default function CursosPage() {
+export default async function CursosPage() {
+  const cursosGraduacao = getCursosGraduacao()
+  const cursosPosGraduacao = getCursosPosGraduacao()
+
   return (
     <>
       <PageHeader

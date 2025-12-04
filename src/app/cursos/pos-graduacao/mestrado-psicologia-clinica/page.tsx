@@ -1,20 +1,25 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
+import { notFound } from 'next/navigation'
 import { Clock, User, Target, BookOpen, Briefcase } from 'lucide-react'
 import { PageHeader } from '@/components/shared/PageHeader'
 import { SectionTitle } from '@/components/shared/SectionTitle'
 import { Card, CardContent } from '@/components/ui/Card'
 import { Button } from '@/components/ui/Button'
-import { cursos } from '@/data/cursos'
-
-const curso = cursos.find(c => c.slug === 'mestrado-psicologia-clinica')!
+import { getCursoBySlug } from '@/lib/queries/cursos'
 
 export const metadata: Metadata = {
-  title: curso.nome,
-  description: curso.descricao,
+  title: 'Mestrado em Psicologia Clínica',
+  description: 'O Mestrado em Psicologia Clínica forma especialistas em avaliação, diagnóstico e intervenção psicológica.',
 }
 
-export default function MestradoPsicologiaClinicaPage() {
+export default async function MestradoPsicologiaClinicaPage() {
+  const curso = await getCursoBySlug('mestrado-psicologia-clinica')
+
+  if (!curso) {
+    notFound()
+  }
+
   return (
     <>
       <PageHeader
