@@ -10,7 +10,7 @@ export const decana: Decana = {
   titulo: 'Decana da Faculdade de Ciências Sociais e Humanas',
   mensagem: `É com imenso orgulho que dou as boas-vindas a todos os visitantes do nosso site institucional. A Faculdade de Ciências Sociais e Humanas tem como missão formar profissionais competentes, éticos e comprometidos com a transformação social.
 
-Ao longo dos anos, a nossa instituição tem-se destacado pela excelência académica, pela investigação de qualidade e pelo impacto positivo na comunidade. Os nossos cursos de Psicologia, Serviço Social, Sociologia e Comunicação Social preparam os estudantes para enfrentar os desafios do mundo contemporâneo com conhecimento, sensibilidade e responsabilidade social.
+Ao longo dos anos, a nossa instituição tem-se destacado pela excelência académica, pela investigação de qualidade e pelo impacto positivo na comunidade. Os nossos cursos de Psicologia do Trabalho e das Organizações, Psicologia Clínica e Línguas preparam os estudantes para enfrentar os desafios do mundo contemporâneo com conhecimento, sensibilidade e responsabilidade social.
 
 Acreditamos que a educação superior deve ser transformadora, não apenas para os indivíduos, mas para toda a sociedade. Por isso, investimos continuamente na qualificação do nosso corpo docente, na atualização dos nossos programas curriculares e na criação de oportunidades de desenvolvimento para os nossos estudantes.
 

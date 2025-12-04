@@ -9,15 +9,15 @@ import { EstruturaProgramatica } from '@/components/cursos/EstruturaProgramatica
 import { cursos } from '@/data/cursos'
 import { getEstruturaByCursoSlug } from '@/data/estrutura-curricular'
 
-const curso = cursos.find(c => c.slug === 'sociologia')!
-const estrutura = getEstruturaByCursoSlug('sociologia')
+const curso = cursos.find(c => c.slug === 'psicologia-trabalho-organizacoes')!
+const estrutura = getEstruturaByCursoSlug('psicologia-trabalho-organizacoes')
 
 export const metadata: Metadata = {
   title: curso.nome,
   description: curso.descricao,
 }
 
-export default function SociologiaPage() {
+export default function PsicologiaTrabalhoOrganizacoesPage() {
   return (
     <>
       <PageHeader
@@ -31,10 +31,11 @@ export default function SociologiaPage() {
             <div className="lg:col-span-2">
               <SectionTitle title="Sobre o Curso" />
               <p className="text-gray-700 dark:text-gray-300 mb-8 leading-relaxed">
-                A Licenciatura em Sociologia forma profissionais com capacidade analítica para compreender 
-                as dinâmicas sociais, culturais e políticas das sociedades contemporâneas. O curso oferece 
-                sólida formação teórica e metodológica, preparando sociólogos para pesquisa, consultoria 
-                e intervenção social.
+                A Licenciatura em Psicologia do Trabalho e das Organizações da FCSH forma profissionais 
+                capacitados para compreender e intervir nos processos psicológicos em contextos organizacionais. 
+                O curso oferece uma formação abrangente que inclui fundamentos teóricos, metodológicos e práticos 
+                da Psicologia Organizacional, preparando os estudantes para atuação em gestão de pessoas, 
+                comportamento organizacional, recrutamento e seleção, e saúde ocupacional.
               </p>
               
               <SectionTitle title="Objetivos do Curso" />

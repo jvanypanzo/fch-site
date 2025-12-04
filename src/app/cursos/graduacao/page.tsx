@@ -8,7 +8,7 @@ import { cursosGraduacao } from '@/data/cursos'
 
 export const metadata: Metadata = {
   title: 'Cursos de Graduação',
-  description: 'Licenciaturas oferecidas pela FCSH - Psicologia, Serviço Social, Sociologia e Comunicação Social.',
+  description: 'Licenciaturas oferecidas pela FCSH - Psicologia do Trabalho e das Organizações, Psicologia Clínica e Línguas.',
 }
 
 export default function GraduacaoPage() {

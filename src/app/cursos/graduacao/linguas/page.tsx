@@ -9,15 +9,15 @@ import { EstruturaProgramatica } from '@/components/cursos/EstruturaProgramatica
 import { cursos } from '@/data/cursos'
 import { getEstruturaByCursoSlug } from '@/data/estrutura-curricular'
 
-const curso = cursos.find(c => c.slug === 'servico-social')!
-const estrutura = getEstruturaByCursoSlug('servico-social')
+const curso = cursos.find(c => c.slug === 'linguas')!
+const estrutura = getEstruturaByCursoSlug('linguas')
 
 export const metadata: Metadata = {
   title: curso.nome,
   description: curso.descricao,
 }
 
-export default function ServicoSocialPage() {
+export default function LinguasPage() {
   return (
     <>
       <PageHeader
@@ -31,10 +31,11 @@ export default function ServicoSocialPage() {
             <div className="lg:col-span-2">
               <SectionTitle title="Sobre o Curso" />
               <p className="text-gray-700 dark:text-gray-300 mb-8 leading-relaxed">
-                A Licenciatura em Serviço Social prepara profissionais para atuar na mediação das relações 
-                sociais, trabalhando com políticas públicas, direitos humanos e justiça social. O curso 
-                combina formação teórica com prática supervisionada, preparando assistentes sociais 
-                comprometidos com a transformação social.
+                A Licenciatura em Línguas da FCSH forma profissionais capacitados para atuar nas 
+                áreas de tradução, interpretação, ensino de línguas e comunicação intercultural. 
+                O curso oferece uma formação abrangente que inclui o domínio de múltiplas línguas 
+                estrangeiras, conhecimento das respectivas literaturas e culturas, bem como 
+                competências técnicas em tradução e interpretação.
               </p>
               
               <SectionTitle title="Objetivos do Curso" />

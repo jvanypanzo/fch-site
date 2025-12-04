@@ -1,0 +1,108 @@
+-- Seed data for FCSH database
+-- Run this after schema.sql
+
+-- Insert Decana
+INSERT INTO decana (nome, titulo, mensagem) VALUES
+  ('Prof.ª Dr.ª Helena Fernandes', 
+   'Decana da Faculdade de Ciências Sociais e Humanas',
+   'É com imenso orgulho que dou as boas-vindas a todos os visitantes do nosso site institucional. A Faculdade de Ciências Sociais e Humanas tem como missão formar profissionais competentes, éticos e comprometidos com a transformação social.
+
+Ao longo dos anos, a nossa instituição tem-se destacado pela excelência académica, pela investigação de qualidade e pelo impacto positivo na comunidade. Os nossos cursos de Psicologia do Trabalho e das Organizações, Psicologia Clínica e Línguas preparam os estudantes para enfrentar os desafios do mundo contemporâneo com conhecimento, sensibilidade e responsabilidade social.
+
+Acreditamos que a educação superior deve ser transformadora, não apenas para os indivíduos, mas para toda a sociedade. Por isso, investimos continuamente na qualificação do nosso corpo docente, na atualização dos nossos programas curriculares e na criação de oportunidades de desenvolvimento para os nossos estudantes.
+
+Convido-vos a conhecer melhor a nossa Faculdade, os nossos cursos, as nossas atividades de investigação e extensão. Juntos, podemos construir um futuro mais justo, inclusivo e sustentável.');
+
+-- Insert Cursos
+INSERT INTO cursos (nome, slug, descricao, duracao, grau) VALUES
+  ('Psicologia do Trabalho e das Organizações', 
+   'psicologia-trabalho-organizacoes', 
+   'O curso de Psicologia do Trabalho e das Organizações forma profissionais capacitados para compreender e intervir nos processos psicológicos em contextos organizacionais, desenvolvendo competências em gestão de pessoas, comportamento organizacional e saúde ocupacional.', 
+   '4 anos', 
+   'Licenciatura'),
+  ('Psicologia Clínica', 
+   'psicologia-clinica', 
+   'O curso de Psicologia Clínica forma profissionais capacitados para compreender, avaliar e intervir em processos de saúde mental, desenvolvendo competências em avaliação psicológica, psicoterapia e intervenção clínica.', 
+   '4 anos', 
+   'Licenciatura'),
+  ('Línguas', 
+   'linguas', 
+   'O curso de Línguas forma profissionais capacitados para atuar nas áreas de tradução, interpretação, ensino de línguas e comunicação intercultural, com domínio de múltiplas línguas e suas literaturas.', 
+   '4 anos', 
+   'Licenciatura'),
+  ('Mestrado em Psicologia Clínica', 
+   'mestrado-psicologia-clinica', 
+   'O Mestrado em Psicologia Clínica forma especialistas em avaliação, diagnóstico e intervenção psicológica, com ênfase na investigação científica e na prática clínica baseada em evidências.', 
+   '2 anos', 
+   'Mestrado'),
+  ('Mestrado em Gestão Social', 
+   'mestrado-gestao-social', 
+   'O Mestrado em Gestão Social forma profissionais especializados na gestão de organizações sociais, projetos de desenvolvimento e políticas públicas.', 
+   '2 anos', 
+   'Mestrado');
+
+-- Insert Professores
+INSERT INTO professores (nome, slug, titulo, departamento, email, telefone, biografia) VALUES
+  ('Prof. Dr. António Silva', 
+   'antonio-silva', 
+   'Doutor em Psicologia', 
+   'Psicologia Clínica', 
+   'antonio.silva@fcsh.edu', 
+   '+244 923 456 789',
+   'António Silva é Professor Catedrático de Psicologia na FCSH, com mais de 20 anos de experiência em docência e investigação. Especialista em Psicologia Clínica, tem desenvolvido trabalho relevante na área da avaliação e intervenção psicológica.'),
+  ('Prof.ª Dr.ª Teresa Oliveira', 
+   'teresa-oliveira', 
+   'Doutora em Psicologia Clínica', 
+   'Psicologia Clínica', 
+   'teresa.oliveira@fcsh.edu', 
+   '+244 923 456 793',
+   'Teresa Oliveira é Professora Associada e Coordenadora do Mestrado em Psicologia Clínica. Especialista em neuropsicologia, desenvolve investigação sobre avaliação neuropsicológica e intervenção clínica.'),
+  ('Prof. Dr. Miguel Sousa', 
+   'miguel-sousa', 
+   'Doutor em Psicologia', 
+   'Psicologia do Trabalho e das Organizações', 
+   'miguel.sousa@fcsh.edu', 
+   '+244 923 456 799',
+   'Miguel Sousa é Professor Catedrático de Psicologia, especializado em psicologia organizacional e gestão de recursos humanos. Coordenador do curso de Psicologia do Trabalho e das Organizações.'),
+  ('Prof. Dr. Pedro Martins', 
+   'pedro-martins', 
+   'Doutor em Psicologia Social', 
+   'Psicologia do Trabalho e das Organizações', 
+   'pedro.martins@fcsh.edu', 
+   '+244 923 456 795',
+   'Pedro Martins é Professor Auxiliar de Psicologia, especializado em psicologia social e comunitária. Desenvolve projetos de intervenção comunitária e investigação sobre dinâmicas de grupo.'),
+  ('Prof.ª Dr.ª Ana Rodrigues', 
+   'ana-rodrigues', 
+   'Doutora em Linguística', 
+   'Línguas', 
+   'ana.rodrigues@fcsh.edu', 
+   '+244 923 456 792',
+   'Ana Rodrigues é Professora Associada e Coordenadora do curso de Línguas. Especialista em linguística aplicada e tradução, desenvolve investigação sobre ensino de línguas e comunicação intercultural.'),
+  ('Prof. Dr. Ricardo Almeida', 
+   'ricardo-almeida', 
+   'Doutor em Estudos Literários', 
+   'Línguas', 
+   'ricardo.almeida@fcsh.edu', 
+   '+244 923 456 797',
+   'Ricardo Almeida é Professor Auxiliar de Línguas, especializado em literatura comparada e literaturas africanas de expressão inglesa.'),
+  ('Prof. Dr. Carlos Ferreira', 
+   'carlos-ferreira', 
+   'Doutor em Gestão', 
+   'Psicologia do Trabalho e das Organizações', 
+   'carlos.ferreira@fcsh.edu', 
+   '+244 923 456 794',
+   'Carlos Ferreira é Professor Associado e Coordenador do Mestrado em Gestão Social. Especializado em gestão de organizações do terceiro setor e empreendedorismo social.'),
+  ('Prof.ª Dr.ª Maria Fernandes', 
+   'maria-fernandes', 
+   'Doutora em Psicologia', 
+   'Psicologia do Trabalho e das Organizações', 
+   'maria.fernandes@fcsh.edu', 
+   '+244 923 456 796',
+   'Maria Fernandes é Professora Auxiliar de Psicologia, com investigação nas áreas de saúde ocupacional, stress e bem-estar no trabalho.'),
+  ('Prof. Dr. João Santos', 
+   'joao-santos', 
+   'Doutor em Línguas e Literaturas', 
+   'Línguas', 
+   'joao.santos@fcsh.edu', 
+   '+244 923 456 800',
+   'João Santos é Professor Auxiliar de Línguas, especializado em língua e literatura francesa, com foco na tradução literária e estudos francófonos.');

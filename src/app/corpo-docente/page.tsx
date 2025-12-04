@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   description: 'Conheça o corpo docente da Faculdade de Ciências Sociais e Humanas.',
 }
 
-const departamentos = ['Psicologia', 'Serviço Social', 'Sociologia', 'Comunicação Social']
+const departamentos = ['Psicologia Clínica', 'Psicologia do Trabalho e das Organizações', 'Línguas']
 
 export default function CorpoDocentePage() {
   return (

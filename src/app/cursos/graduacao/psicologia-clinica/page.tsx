@@ -9,15 +9,15 @@ import { EstruturaProgramatica } from '@/components/cursos/EstruturaProgramatica
 import { cursos } from '@/data/cursos'
 import { getEstruturaByCursoSlug } from '@/data/estrutura-curricular'
 
-const curso = cursos.find(c => c.slug === 'psicologia')!
-const estrutura = getEstruturaByCursoSlug('psicologia')
+const curso = cursos.find(c => c.slug === 'psicologia-clinica')!
+const estrutura = getEstruturaByCursoSlug('psicologia-clinica')
 
 export const metadata: Metadata = {
   title: curso.nome,
   description: curso.descricao,
 }
 
-export default function PsicologiaPage() {
+export default function PsicologiaClinicaPage() {
   return (
     <>
       <PageHeader
@@ -31,10 +31,11 @@ export default function PsicologiaPage() {
             <div className="lg:col-span-2">
               <SectionTitle title="Sobre o Curso" />
               <p className="text-gray-700 dark:text-gray-300 mb-8 leading-relaxed">
-                A Licenciatura em Psicologia da FCSH forma profissionais capacitados para compreender e intervir 
-                nos processos psicológicos do ser humano. O curso oferece uma formação abrangente que inclui 
-                fundamentos teóricos, metodológicos e práticos da Psicologia, preparando os estudantes para 
-                atuação em diversas áreas como clínica, organizacional, escolar e social.
+                A Licenciatura em Psicologia Clínica da FCSH forma profissionais capacitados para 
+                compreender, avaliar e intervir em processos de saúde mental. O curso oferece uma 
+                formação abrangente que inclui fundamentos teóricos, metodológicos e práticos da 
+                Psicologia Clínica, preparando os estudantes para atuação em avaliação psicológica, 
+                diagnóstico, psicoterapia e intervenção em diferentes contextos de saúde.
               </p>
               
               <SectionTitle title="Objetivos do Curso" />
