@@ -26,6 +26,36 @@ export interface DisciplinaDisplay {
   bibliografia?: string
 }
 
+// Default empty curso when no data is available
+const DEFAULT_CURSO = { nome: '', slug: '' }
+
+// Database result type with joined relations
+type DisciplinaWithRelations = Disciplina & { 
+  curso?: { nome: string; slug: string } | null
+  professor?: { nome: string; slug: string } | null 
+}
+
+// Transform database disciplina to display format
+function transformDisciplinaToDisplay(d: DisciplinaWithRelations): DisciplinaDisplay {
+  return {
+    id: d.id,
+    nome: d.nome,
+    slug: d.slug,
+    codigo: d.codigo,
+    creditos: d.creditos || 0,
+    horas: d.horas,
+    carga_horaria_teorica: d.carga_horaria_teorica,
+    carga_horaria_pratica: d.carga_horaria_pratica,
+    semestre: d.semestre,
+    ano: d.ano,
+    curso: d.curso ? { nome: d.curso.nome, slug: d.curso.slug } : DEFAULT_CURSO,
+    professor: d.professor ? { nome: d.professor.nome, slug: d.professor.slug } : undefined,
+    ementa: d.ementa,
+    objetivos: d.objetivos,
+    bibliografia: d.bibliografia,
+  }
+}
+
 // Get all disciplinas
 export async function getDisciplinas(): Promise<DisciplinaDisplay[]> {
   if (!isSupabaseConfigured || !supabase) {
@@ -45,26 +75,7 @@ export async function getDisciplinas(): Promise<DisciplinaDisplay[]> {
     if (error) throw error
     
     if (data && data.length > 0) {
-      return data.map((d: Disciplina & { 
-        curso?: { nome: string; slug: string } | null
-        professor?: { nome: string; slug: string } | null 
-      }) => ({
-        id: d.id,
-        nome: d.nome,
-        slug: d.slug,
-        codigo: d.codigo,
-        creditos: d.creditos || 0,
-        horas: d.horas,
-        carga_horaria_teorica: d.carga_horaria_teorica,
-        carga_horaria_pratica: d.carga_horaria_pratica,
-        semestre: d.semestre,
-        ano: d.ano,
-        curso: d.curso ? { nome: d.curso.nome, slug: d.curso.slug } : { nome: '', slug: '' },
-        professor: d.professor ? { nome: d.professor.nome, slug: d.professor.slug } : undefined,
-        ementa: d.ementa,
-        objetivos: d.objetivos,
-        bibliografia: d.bibliografia,
-      }))
+      return data.map(transformDisciplinaToDisplay)
     }
     
     return []
@@ -93,27 +104,7 @@ export async function getDisciplinaBySlug(slug: string): Promise<DisciplinaDispl
     if (error) throw error
     
     if (data) {
-      const d = data as Disciplina & { 
-        curso?: { nome: string; slug: string } | null
-        professor?: { nome: string; slug: string } | null 
-      }
-      return {
-        id: d.id,
-        nome: d.nome,
-        slug: d.slug,
-        codigo: d.codigo,
-        creditos: d.creditos || 0,
-        horas: d.horas,
-        carga_horaria_teorica: d.carga_horaria_teorica,
-        carga_horaria_pratica: d.carga_horaria_pratica,
-        semestre: d.semestre,
-        ano: d.ano,
-        curso: d.curso ? { nome: d.curso.nome, slug: d.curso.slug } : { nome: '', slug: '' },
-        professor: d.professor ? { nome: d.professor.nome, slug: d.professor.slug } : undefined,
-        ementa: d.ementa,
-        objetivos: d.objetivos,
-        bibliografia: d.bibliografia,
-      }
+      return transformDisciplinaToDisplay(data)
     }
     
     return null
@@ -144,26 +135,7 @@ export async function getDisciplinasByAno(cursoId: string, ano: number): Promise
     if (error) throw error
     
     if (data && data.length > 0) {
-      return data.map((d: Disciplina & { 
-        curso?: { nome: string; slug: string } | null
-        professor?: { nome: string; slug: string } | null 
-      }) => ({
-        id: d.id,
-        nome: d.nome,
-        slug: d.slug,
-        codigo: d.codigo,
-        creditos: d.creditos || 0,
-        horas: d.horas,
-        carga_horaria_teorica: d.carga_horaria_teorica,
-        carga_horaria_pratica: d.carga_horaria_pratica,
-        semestre: d.semestre,
-        ano: d.ano,
-        curso: d.curso ? { nome: d.curso.nome, slug: d.curso.slug } : { nome: '', slug: '' },
-        professor: d.professor ? { nome: d.professor.nome, slug: d.professor.slug } : undefined,
-        ementa: d.ementa,
-        objetivos: d.objetivos,
-        bibliografia: d.bibliografia,
-      }))
+      return data.map(transformDisciplinaToDisplay)
     }
     
     return []
@@ -194,26 +166,7 @@ export async function getDisciplinasByCurso(cursoId: string): Promise<Disciplina
     if (error) throw error
     
     if (data && data.length > 0) {
-      return data.map((d: Disciplina & { 
-        curso?: { nome: string; slug: string } | null
-        professor?: { nome: string; slug: string } | null 
-      }) => ({
-        id: d.id,
-        nome: d.nome,
-        slug: d.slug,
-        codigo: d.codigo,
-        creditos: d.creditos || 0,
-        horas: d.horas,
-        carga_horaria_teorica: d.carga_horaria_teorica,
-        carga_horaria_pratica: d.carga_horaria_pratica,
-        semestre: d.semestre,
-        ano: d.ano,
-        curso: d.curso ? { nome: d.curso.nome, slug: d.curso.slug } : { nome: '', slug: '' },
-        professor: d.professor ? { nome: d.professor.nome, slug: d.professor.slug } : undefined,
-        ementa: d.ementa,
-        objetivos: d.objetivos,
-        bibliografia: d.bibliografia,
-      }))
+      return data.map(transformDisciplinaToDisplay)
     }
     
     return []
