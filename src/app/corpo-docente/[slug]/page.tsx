@@ -8,6 +8,7 @@ import { Avatar } from '@/components/shared/Avatar'
 import { Card, CardContent } from '@/components/ui/Card'
 import { Button } from '@/components/ui/Button'
 import { getProfessorBySlug, getAllProfessorSlugs } from '@/lib/queries/professores'
+import { getDisciplinasByProfessor } from '@/lib/queries/disciplinas'
 
 interface PageProps {
   params: Promise<{ slug: string }>
@@ -43,6 +44,9 @@ export default async function ProfessorPage({ params }: PageProps) {
   if (!professor) {
     notFound()
   }
+
+  // Fetch disciplinas from database
+  const disciplinas = await getDisciplinasByProfessor(professor.id)
 
   return (
     <>
@@ -158,14 +162,20 @@ export default async function ProfessorPage({ params }: PageProps) {
                 <SectionTitle title="Disciplinas Lecionadas" />
                 <Card>
                   <CardContent className="pt-6">
-                    <ul className="space-y-3">
-                      {professor.disciplinas.map((disciplina, index) => (
-                        <li key={index} className="flex items-start">
-                          <BookOpen className="w-5 h-5 text-primary mr-3 mt-0.5 flex-shrink-0" />
-                          <span className="text-gray-700 dark:text-gray-300">{disciplina}</span>
-                        </li>
-                      ))}
-                    </ul>
+                    {disciplinas.length > 0 ? (
+                      <ul className="space-y-3">
+                        {disciplinas.map((disciplina) => (
+                          <li key={disciplina.id} className="flex items-start">
+                            <BookOpen className="w-5 h-5 text-primary mr-3 mt-0.5 flex-shrink-0" />
+                            <span className="text-gray-700 dark:text-gray-300">
+                              {disciplina.nome} - {disciplina.curso.nome} ({disciplina.ano}º Ano, {disciplina.semestre}º Semestre)
+                            </span>
+                          </li>
+                        ))}
+                      </ul>
+                    ) : (
+                      <p className="text-gray-600 dark:text-gray-400">Sem disciplinas atribuídas.</p>
+                    )}
                   </CardContent>
                 </Card>
               </div>

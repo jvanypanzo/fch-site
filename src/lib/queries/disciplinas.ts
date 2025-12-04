@@ -174,3 +174,34 @@ export async function getDisciplinasByCurso(cursoId: string): Promise<Disciplina
     return []
   }
 }
+
+// Get disciplinas by professor
+export async function getDisciplinasByProfessor(professorId: string): Promise<DisciplinaDisplay[]> {
+  if (!isSupabaseConfigured || !supabase) {
+    return []
+  }
+
+  try {
+    const { data, error } = await supabase
+      .from('disciplinas')
+      .select(`
+        *,
+        curso:cursos(nome, slug),
+        professor:professores(nome, slug)
+      `)
+      .eq('professor_id', professorId)
+      .order('ano')
+      .order('semestre')
+      .order('nome')
+    
+    if (error) throw error
+    
+    if (data && data.length > 0) {
+      return data.map(transformDisciplinaToDisplay)
+    }
+    
+    return []
+  } catch {
+    return []
+  }
+}
