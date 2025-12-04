@@ -33,9 +33,9 @@ const fallbackProfessores: ProfessorDisplay[] = [
     nome: 'Prof. Dr. António Silva',
     titulacao: 'Doutor em Psicologia',
     areas: ['Psicologia Clínica', 'Psicoterapia', 'Avaliação Psicológica'],
-    email: 'antonio.silva@fcsh.edu',
+    email: 'antonio.silva@FCH.edu',
     departamento: 'Psicologia Clínica',
-    biografia: 'António Silva é Professor Catedrático de Psicologia na FCSH, com mais de 20 anos de experiência em docência e investigação. Especialista em Psicologia Clínica, tem desenvolvido trabalho relevante na área da avaliação e intervenção psicológica.',
+    biografia: 'António Silva é Professor Catedrático de Psicologia na FCH, com mais de 20 anos de experiência em docência e investigação. Especialista em Psicologia Clínica, tem desenvolvido trabalho relevante na área da avaliação e intervenção psicológica.',
     formacao: [
       'Doutoramento em Psicologia - Universidade de Lisboa (2005)',
       'Mestrado em Psicologia Clínica - Universidade de Coimbra (2000)',
@@ -55,7 +55,7 @@ const fallbackProfessores: ProfessorDisplay[] = [
     nome: 'Prof.ª Dr.ª Teresa Oliveira',
     titulacao: 'Doutora em Psicologia Clínica',
     areas: ['Neuropsicologia', 'Psicopatologia', 'Intervenção Clínica'],
-    email: 'teresa.oliveira@fcsh.edu',
+    email: 'teresa.oliveira@FCH.edu',
     departamento: 'Psicologia Clínica',
     biografia: 'Teresa Oliveira é Professora Associada e Coordenadora do Mestrado em Psicologia Clínica. Especialista em neuropsicologia, desenvolve investigação sobre avaliação neuropsicológica e intervenção clínica.',
     formacao: [
@@ -77,7 +77,7 @@ const fallbackProfessores: ProfessorDisplay[] = [
     nome: 'Prof. Dr. Miguel Sousa',
     titulacao: 'Doutor em Psicologia',
     areas: ['Psicologia Organizacional', 'Recursos Humanos', 'Liderança'],
-    email: 'miguel.sousa@fcsh.edu',
+    email: 'miguel.sousa@FCH.edu',
     departamento: 'Psicologia do Trabalho e das Organizações',
     biografia: 'Miguel Sousa é Professor Catedrático de Psicologia, especializado em psicologia organizacional e gestão de recursos humanos. Coordenador do curso de Psicologia do Trabalho e das Organizações.',
     formacao: [
@@ -99,7 +99,7 @@ const fallbackProfessores: ProfessorDisplay[] = [
     nome: 'Prof. Dr. Pedro Martins',
     titulacao: 'Doutor em Psicologia Social',
     areas: ['Psicologia Social', 'Psicologia Comunitária', 'Dinâmicas de Grupo'],
-    email: 'pedro.martins@fcsh.edu',
+    email: 'pedro.martins@FCH.edu',
     departamento: 'Psicologia do Trabalho e das Organizações',
     biografia: 'Pedro Martins é Professor Auxiliar de Psicologia, especializado em psicologia social e comunitária. Desenvolve projetos de intervenção comunitária e investigação sobre dinâmicas de grupo.',
     formacao: [
@@ -121,7 +121,7 @@ const fallbackProfessores: ProfessorDisplay[] = [
     nome: 'Prof.ª Dr.ª Ana Rodrigues',
     titulacao: 'Doutora em Linguística',
     areas: ['Linguística Aplicada', 'Tradução', 'Ensino de Línguas'],
-    email: 'ana.rodrigues@fcsh.edu',
+    email: 'ana.rodrigues@FCH.edu',
     departamento: 'Línguas',
     biografia: 'Ana Rodrigues é Professora Associada e Coordenadora do curso de Línguas. Especialista em linguística aplicada e tradução, desenvolve investigação sobre ensino de línguas e comunicação intercultural.',
     formacao: [
@@ -143,7 +143,7 @@ const fallbackProfessores: ProfessorDisplay[] = [
     nome: 'Prof. Dr. Ricardo Almeida',
     titulacao: 'Doutor em Estudos Literários',
     areas: ['Literatura Comparada', 'Literaturas Africanas', 'Língua Inglesa'],
-    email: 'ricardo.almeida@fcsh.edu',
+    email: 'ricardo.almeida@FCH.edu',
     departamento: 'Línguas',
     biografia: 'Ricardo Almeida é Professor Auxiliar de Línguas, especializado em literatura comparada e literaturas africanas de expressão inglesa.',
     formacao: [
@@ -165,7 +165,7 @@ const fallbackProfessores: ProfessorDisplay[] = [
     nome: 'Prof. Dr. Carlos Ferreira',
     titulacao: 'Doutor em Gestão',
     areas: ['Gestão Social', 'Políticas Públicas', 'Empreendedorismo'],
-    email: 'carlos.ferreira@fcsh.edu',
+    email: 'carlos.ferreira@FCH.edu',
     departamento: 'Psicologia do Trabalho e das Organizações',
     biografia: 'Carlos Ferreira é Professor Associado e Coordenador do Mestrado em Gestão Social. Especializado em gestão de organizações do terceiro setor e empreendedorismo social.',
     formacao: [
@@ -187,7 +187,7 @@ const fallbackProfessores: ProfessorDisplay[] = [
     nome: 'Prof.ª Dr.ª Maria Fernandes',
     titulacao: 'Doutora em Psicologia',
     areas: ['Saúde Ocupacional', 'Stress e Burnout', 'Bem-estar no Trabalho'],
-    email: 'maria.fernandes@fcsh.edu',
+    email: 'maria.fernandes@FCH.edu',
     departamento: 'Psicologia do Trabalho e das Organizações',
     biografia: 'Maria Fernandes é Professora Auxiliar de Psicologia, com investigação nas áreas de saúde ocupacional, stress e bem-estar no trabalho.',
     formacao: [
@@ -209,7 +209,7 @@ const fallbackProfessores: ProfessorDisplay[] = [
     nome: 'Prof. Dr. João Santos',
     titulacao: 'Doutor em Línguas e Literaturas',
     areas: ['Língua Francesa', 'Tradução Literária', 'Francofonia'],
-    email: 'joao.santos@fcsh.edu',
+    email: 'joao.santos@FCH.edu',
     departamento: 'Línguas',
     biografia: 'João Santos é Professor Auxiliar de Línguas, especializado em língua e literatura francesa, com foco na tradução literária e estudos francófonos.',
     formacao: [

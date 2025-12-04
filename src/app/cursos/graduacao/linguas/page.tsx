@@ -35,7 +35,7 @@ export default async function LinguasPage() {
             <div className="lg:col-span-2">
               <SectionTitle title="Sobre o Curso" />
               <p className="text-gray-700 dark:text-gray-300 mb-8 leading-relaxed">
-                A Licenciatura em Línguas da FCSH forma profissionais capacitados para atuar nas 
+                A Licenciatura em Línguas da FCH forma profissionais capacitados para atuar nas 
                 áreas de tradução, interpretação, ensino de línguas e comunicação intercultural. 
                 O curso oferece uma formação abrangente que inclui o domínio de múltiplas línguas 
                 estrangeiras, conhecimento das respectivas literaturas e culturas, bem como 

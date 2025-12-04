@@ -6,7 +6,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/Card'
 
 export const metadata: Metadata = {
   title: 'Associação de Estudantes',
-  description: 'Associação de Estudantes da FCSH - Representação e atividades estudantis.',
+  description: 'Associação de Estudantes da FCH - Representação e atividades estudantis.',
 }
 
 const sections = [
@@ -35,14 +35,14 @@ export default function AssociacaoEstudantesPage() {
     <>
       <PageHeader
         title="Associação de Estudantes"
-        description="A voz dos estudantes da FCSH - representação, defesa dos interesses e promoção de atividades."
+        description="A voz dos estudantes da FCH - representação, defesa dos interesses e promoção de atividades."
       />
       
       <section className="py-16">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto mb-12">
             <p className="text-lg text-gray-700 leading-relaxed mb-6">
-              A Associação de Estudantes da FCSH (AE-FCSH) é o órgão representativo dos estudantes da 
+              A Associação de Estudantes da FCH (AE-FCH) é o órgão representativo dos estudantes da 
               Faculdade. A nossa missão é defender os interesses dos estudantes, promover atividades 
               culturais, desportivas e académicas, e contribuir para uma experiência universitária 
               enriquecedora.
@@ -78,7 +78,7 @@ export default function AssociacaoEstudantesPage() {
           <div className="bg-secondary/10 rounded-lg p-8 text-center">
             <h3 className="text-xl font-semibold text-primary mb-4">Quer fazer parte?</h3>
             <p className="text-gray-600 mb-6">
-              A AE-FCSH está sempre à procura de estudantes motivados para contribuir. 
+              A AE-FCH está sempre à procura de estudantes motivados para contribuir. 
               Se tens ideias, energia e vontade de fazer a diferença, junta-te a nós!
             </p>
             <Link href="/associacao-estudantes/contatos">

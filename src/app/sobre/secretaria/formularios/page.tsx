@@ -7,7 +7,7 @@ import { Button } from '@/components/ui/Button'
 
 export const metadata: Metadata = {
   title: 'Formulários',
-  description: 'Formulários para requerimentos e solicitações à Secretaria Académica da FCSH.',
+  description: 'Formulários para requerimentos e solicitações à Secretaria Académica da FCH.',
 }
 
 const formularios = [

@@ -35,7 +35,7 @@ export default async function PsicologiaClinicaPage() {
             <div className="lg:col-span-2">
               <SectionTitle title="Sobre o Curso" />
               <p className="text-gray-700 dark:text-gray-300 mb-8 leading-relaxed">
-                A Licenciatura em Psicologia Clínica da FCSH forma profissionais capacitados para 
+                A Licenciatura em Psicologia Clínica da FCH forma profissionais capacitados para 
                 compreender, avaliar e intervir em processos de saúde mental. O curso oferece uma 
                 formação abrangente que inclui fundamentos teóricos, metodológicos e práticos da 
                 Psicologia Clínica, preparando os estudantes para atuação em avaliação psicológica, 

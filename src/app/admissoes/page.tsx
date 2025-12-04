@@ -6,7 +6,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/Card'
 
 export const metadata: Metadata = {
   title: 'Admissões',
-  description: 'Informações sobre o processo de admissão à FCSH.',
+  description: 'Informações sobre o processo de admissão à FCH.',
 }
 
 const sections = [
@@ -41,7 +41,7 @@ export default function AdmissoesPage() {
     <>
       <PageHeader
         title="Admissões"
-        description="Venha fazer parte da FCSH - conheça o processo de admissão."
+        description="Venha fazer parte da FCH - conheça o processo de admissão."
       />
       
       <section className="py-16">
@@ -87,7 +87,7 @@ export default function AdmissoesPage() {
           <div className="bg-primary text-white rounded-lg p-8 text-center">
             <h3 className="text-2xl font-bold mb-4">Pronto para começar?</h3>
             <p className="mb-6 text-gray-200">
-              Inicie sua jornada académica na FCSH. Escolha seu curso e prepare sua candidatura.
+              Inicie sua jornada académica na FCH. Escolha seu curso e prepare sua candidatura.
             </p>
             <Link href="/cursos">
               <span className="inline-flex items-center px-6 py-3 bg-secondary text-white rounded-md hover:bg-secondary/90 transition-colors font-medium">

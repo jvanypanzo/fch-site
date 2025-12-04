@@ -8,7 +8,7 @@ import { Button } from '@/components/ui/Button'
 
 export const metadata: Metadata = {
   title: 'Serviços do Laboratório de Psicologia',
-  description: 'Serviços de avaliação e acompanhamento psicológico da FCSH.',
+  description: 'Serviços de avaliação e acompanhamento psicológico da FCH.',
 }
 
 const servicos = [

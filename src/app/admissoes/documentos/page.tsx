@@ -6,7 +6,7 @@ import { Card, CardContent } from '@/components/ui/Card'
 
 export const metadata: Metadata = {
   title: 'Documentos para Candidatura',
-  description: 'Documentos necessários para candidatura aos cursos da FCSH.',
+  description: 'Documentos necessários para candidatura aos cursos da FCH.',
 }
 
 const docsGraduacao = [

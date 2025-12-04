@@ -6,7 +6,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/Card'
 
 export const metadata: Metadata = {
   title: 'Estágios',
-  description: 'Coordenação de Estágios da FCSH - supervisores, parceiros e candidaturas.',
+  description: 'Coordenação de Estágios da FCH - supervisores, parceiros e candidaturas.',
 }
 
 const sections = [
@@ -44,7 +44,7 @@ export default function EstagiosPage() {
             <p className="text-lg text-gray-700 leading-relaxed mb-6">
               O estágio curricular é uma componente fundamental da formação académica, permitindo 
               aos estudantes aplicar os conhecimentos adquiridos em contexto real de trabalho. 
-              A Coordenação de Estágios da FCSH estabelece parcerias com diversas instituições 
+              A Coordenação de Estágios da FCH estabelece parcerias com diversas instituições 
               e acompanha todo o processo de estágio.
             </p>
             <div className="bg-secondary/10 rounded-lg p-6">

@@ -8,7 +8,7 @@ import { Button } from '@/components/ui/Button'
 
 export const metadata: Metadata = {
   title: 'Cursos Complementares',
-  description: 'Cursos complementares e de formação contínua da FCSH.',
+  description: 'Cursos complementares e de formação contínua da FCH.',
 }
 
 const cursos = [

@@ -6,7 +6,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/Card'
 
 export const metadata: Metadata = {
   title: 'Requisitos de Admissão',
-  description: 'Requisitos para candidatura aos cursos da FCSH.',
+  description: 'Requisitos para candidatura aos cursos da FCH.',
 }
 
 const requisitosGraduacao = [
@@ -37,7 +37,7 @@ export default function RequisitosPage() {
     <>
       <PageHeader
         title="Requisitos de Admissão"
-        description="Conheça os requisitos para candidatura aos cursos da FCSH."
+        description="Conheça os requisitos para candidatura aos cursos da FCH."
       />
       
       <section className="py-16">
@@ -105,7 +105,7 @@ export default function RequisitosPage() {
             <ul className="text-sm text-gray-600 space-y-2">
               <li>• O número de vagas é limitado e a seleção é competitiva.</li>
               <li>• Candidatos com necessidades especiais devem indicar no formulário de candidatura.</li>
-              <li>• A FCSH reserva-se o direito de solicitar documentação adicional.</li>
+              <li>• A FCH reserva-se o direito de solicitar documentação adicional.</li>
               <li>• Informações falsas resultam em cancelamento automático da candidatura.</li>
             </ul>
           </div>

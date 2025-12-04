@@ -95,9 +95,9 @@ export default function ContatoPage() {
                   </CardHeader>
                   <CardContent>
                     <ul className="space-y-2 text-gray-600">
-                      <li><strong>Geral:</strong> <a href="mailto:info@fcsh.edu" className="text-primary hover:text-secondary">info@fcsh.edu</a></li>
-                      <li><strong>Secretaria:</strong> <a href="mailto:secretaria@fcsh.edu" className="text-primary hover:text-secondary">secretaria@fcsh.edu</a></li>
-                      <li><strong>Admissões:</strong> <a href="mailto:admissoes@fcsh.edu" className="text-primary hover:text-secondary">admissoes@fcsh.edu</a></li>
+                      <li><strong>Geral:</strong> <a href="mailto:info@FCH.edu" className="text-primary hover:text-secondary">info@FCH.edu</a></li>
+                      <li><strong>Secretaria:</strong> <a href="mailto:secretaria@FCH.edu" className="text-primary hover:text-secondary">secretaria@FCH.edu</a></li>
+                      <li><strong>Admissões:</strong> <a href="mailto:admissoes@FCH.edu" className="text-primary hover:text-secondary">admissoes@FCH.edu</a></li>
                     </ul>
                   </CardContent>
                 </Card>

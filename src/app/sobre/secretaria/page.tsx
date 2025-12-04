@@ -6,7 +6,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/Card'
 
 export const metadata: Metadata = {
   title: 'Secretaria',
-  description: 'Secretaria Académica da FCSH - Serviços, formulários, horários e contatos.',
+  description: 'Secretaria Académica da FCH - Serviços, formulários, horários e contatos.',
 }
 
 const sections = [
@@ -42,7 +42,7 @@ export default function SecretariaPage() {
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto mb-12">
             <p className="text-lg text-gray-700 leading-relaxed">
-              A Secretaria Académica da FCSH oferece diversos serviços de apoio aos estudantes, docentes 
+              A Secretaria Académica da FCH oferece diversos serviços de apoio aos estudantes, docentes 
               e público em geral. Aqui você pode encontrar informações sobre documentos, formulários, 
               horários de atendimento e formas de contato.
             </p>
@@ -83,7 +83,7 @@ export default function SecretariaPage() {
                 </p>
                 <p className="text-gray-700">
                   <strong>Telefone:</strong> +244 222 123 456<br />
-                  <strong>Email:</strong> secretaria@fcsh.edu
+                  <strong>Email:</strong> secretaria@FCH.edu
                 </p>
               </div>
             </div>

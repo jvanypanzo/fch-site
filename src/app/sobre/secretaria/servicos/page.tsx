@@ -5,7 +5,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/Card'
 
 export const metadata: Metadata = {
   title: 'Serviços da Secretaria',
-  description: 'Conheça os serviços oferecidos pela Secretaria Académica da FCSH.',
+  description: 'Conheça os serviços oferecidos pela Secretaria Académica da FCH.',
 }
 
 const servicos = [

@@ -5,7 +5,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/Card'
 
 export const metadata: Metadata = {
   title: 'Perguntas Frequentes - Admissões',
-  description: 'Perguntas frequentes sobre admissões na FCSH.',
+  description: 'Perguntas frequentes sobre admissões na FCH.',
 }
 
 const faqs = [
@@ -23,7 +23,7 @@ const faqs = [
   },
   {
     pergunta: 'Há bolsas de estudo disponíveis?',
-    resposta: 'Sim, a FCSH oferece bolsas de mérito e bolsas sociais. Os critérios e processo de candidatura são divulgados no início de cada ano letivo.',
+    resposta: 'Sim, a FCH oferece bolsas de mérito e bolsas sociais. Os critérios e processo de candidatura são divulgados no início de cada ano letivo.',
   },
   {
     pergunta: 'Posso transferir de outra instituição?',
@@ -46,7 +46,7 @@ const faqs = [
     resposta: 'As propinas são pagas mensalmente. Em casos especiais, é possível solicitar um plano de pagamento junto à Secretaria.',
   },
   {
-    pergunta: 'A FCSH tem acordos de intercâmbio?',
+    pergunta: 'A FCH tem acordos de intercâmbio?',
     resposta: 'Sim, temos acordos com universidades em Portugal, Brasil e outros países. Os estudantes com bom desempenho podem candidatar-se a programas de mobilidade.',
   },
 ]
@@ -82,8 +82,8 @@ export default function FAQPage() {
               <h3 className="font-semibold text-primary mb-2">Não encontrou sua dúvida?</h3>
               <p className="text-gray-600 mb-4">
                 Entre em contato conosco pelo email{' '}
-                <a href="mailto:admissoes@fcsh.edu" className="text-primary hover:text-secondary">
-                  admissoes@fcsh.edu
+                <a href="mailto:admissoes@FCH.edu" className="text-primary hover:text-secondary">
+                  admissoes@FCH.edu
                 </a>{' '}
                 ou visite a Secretaria.
               </p>

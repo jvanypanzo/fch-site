@@ -27,7 +27,7 @@ export default function HistoriaPage() {
             <p className="text-gray-700 mb-12 leading-relaxed">
               Os primeiros cursos oferecidos foram as licenciaturas em Psicologia e Serviço Social, respondendo 
               a uma demanda crescente por profissionais qualificados nessas áreas. Com um corpo docente dedicado 
-              e infraestrutura adequada, a FCSH rapidamente se estabeleceu como uma referência na formação de 
+              e infraestrutura adequada, a FCH rapidamente se estabeleceu como uma referência na formação de 
               recursos humanos na região.
             </p>
             
@@ -43,16 +43,16 @@ export default function HistoriaPage() {
               impulso com a criação do Centro de Investigação e Estudos Interdisciplinares (CIEI).
             </p>
             
-            <SectionTitle title="A FCSH Hoje" />
+            <SectionTitle title="A FCH Hoje" />
             <p className="text-gray-700 mb-6 leading-relaxed">
-              Atualmente, a FCSH conta com quatro licenciaturas e dois mestrados, um corpo docente altamente 
+              Atualmente, a FCH conta com quatro licenciaturas e dois mestrados, um corpo docente altamente 
               qualificado e modernas instalações. O Laboratório de Psicologia presta serviços à comunidade, 
               enquanto os programas de extensão ampliam o alcance da formação oferecida.
             </p>
             <p className="text-gray-700 leading-relaxed">
               Com parcerias nacionais e internacionais, a Faculdade continua a evoluir, mantendo o seu 
               compromisso com a excelência académica, a investigação relevante e a responsabilidade social. 
-              Milhares de profissionais formados pela FCSH atuam em diversas áreas, contribuindo para o 
+              Milhares de profissionais formados pela FCH atuam em diversas áreas, contribuindo para o 
               desenvolvimento da sociedade.
             </p>
           </div>

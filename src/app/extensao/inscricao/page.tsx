@@ -7,7 +7,7 @@ import { Button } from '@/components/ui/Button'
 
 export const metadata: Metadata = {
   title: 'Inscrição em Cursos de Extensão',
-  description: 'Processo de inscrição nos cursos de extensão da FCSH.',
+  description: 'Processo de inscrição nos cursos de extensão da FCH.',
 }
 
 const etapas = [
@@ -45,7 +45,7 @@ export default function InscricaoExtensaoPage() {
     <>
       <PageHeader
         title="Inscrição"
-        description="Como se inscrever nos cursos de extensão da FCSH."
+        description="Como se inscrever nos cursos de extensão da FCH."
       />
       
       <section className="py-16">
@@ -110,7 +110,7 @@ export default function InscricaoExtensaoPage() {
                     <div className="flex items-start">
                       <CheckCircle className="w-5 h-5 text-green-600 mr-2 flex-shrink-0" />
                       <p className="text-sm text-green-800">
-                        Descontos especiais para estudantes e ex-alunos da FCSH.
+                        Descontos especiais para estudantes e ex-alunos da FCH.
                       </p>
                     </div>
                   </div>

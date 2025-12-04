@@ -5,7 +5,7 @@ import { PageHeader } from '@/components/shared/PageHeader'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/Card'
 
 export const metadata: Metadata = {
-  title: 'Sobre a FCSH',
+  title: 'Sobre a FCH',
   description: 'Conheça a Faculdade de Ciências Sociais e Humanas - nossa história, missão, visão e valores.',
 }
 
@@ -22,7 +22,7 @@ const sections = [
   },
   {
     title: 'Estrutura Organizacional',
-    description: 'Como a FCSH está organizada para melhor servir a comunidade.',
+    description: 'Como a FCH está organizada para melhor servir a comunidade.',
     href: '/sobre/estrutura-organizacional',
   },
   {
@@ -41,7 +41,7 @@ export default function SobrePage() {
   return (
     <>
       <PageHeader
-        title="Sobre a FCSH"
+        title="Sobre a FCH"
         description="Conheça a Faculdade de Ciências Sociais e Humanas, uma instituição de referência na formação de profissionais nas áreas sociais e humanas."
       />
       
@@ -49,7 +49,7 @@ export default function SobrePage() {
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto mb-12">
             <p className="text-lg text-gray-700 leading-relaxed">
-              A Faculdade de Ciências Sociais e Humanas (FCSH) é uma unidade orgânica da Universidade dedicada 
+              A Faculdade de Ciências Sociais e Humanas (FCH) é uma unidade orgânica da Universidade dedicada 
               ao ensino, investigação e extensão nas áreas das Ciências Sociais e Humanas. Ao longo de mais de 
               três décadas, temos formado profissionais competentes e socialmente responsáveis que atuam em 
               diversas áreas da sociedade.

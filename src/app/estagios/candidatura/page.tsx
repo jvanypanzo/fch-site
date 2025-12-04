@@ -8,7 +8,7 @@ import { Button } from '@/components/ui/Button'
 
 export const metadata: Metadata = {
   title: 'Candidatura a Estágio',
-  description: 'Processo de candidatura a estágio curricular na FCSH.',
+  description: 'Processo de candidatura a estágio curricular na FCH.',
 }
 
 const requisitos = [

@@ -6,14 +6,14 @@ import { Card, CardContent } from '@/components/ui/Card'
 
 export const metadata: Metadata = {
   title: 'Links Úteis',
-  description: 'Links úteis para estudantes e comunidade da FCSH.',
+  description: 'Links úteis para estudantes e comunidade da FCH.',
 }
 
 const linksInternos = [
   { titulo: 'Portal do Estudante', url: '#', descricao: 'Acesso às notas, horários e serviços online' },
   { titulo: 'Biblioteca Virtual', url: '#', descricao: 'Acervo digital de livros e periódicos' },
   { titulo: 'Plataforma de E-Learning', url: '#', descricao: 'Aulas e materiais online' },
-  { titulo: 'Email Institucional', url: '#', descricao: 'Webmail da FCSH' },
+  { titulo: 'Email Institucional', url: '#', descricao: 'Webmail da FCH' },
 ]
 
 const linksAcademicos = [
@@ -47,7 +47,7 @@ export default function LinksUteisPage() {
       
       <section className="py-16">
         <div className="container mx-auto px-4">
-          <SectionTitle title="Serviços Internos FCSH" />
+          <SectionTitle title="Serviços Internos FCH" />
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-12">
             {linksInternos.map((link, index) => (
               <Card key={index}>

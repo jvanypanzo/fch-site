@@ -6,7 +6,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/Card'
 
 export const metadata: Metadata = {
   title: 'Coordenação Extracurricular',
-  description: 'Atividades extracurriculares da FCSH - desporto, cultura e lazer.',
+  description: 'Atividades extracurriculares da FCH - desporto, cultura e lazer.',
 }
 
 const areas = [

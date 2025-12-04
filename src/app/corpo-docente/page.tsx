@@ -18,7 +18,7 @@ export default async function CorpoDocentePage() {
     <>
       <PageHeader
         title="Corpo Docente"
-        description="Conheça os professores e investigadores da FCSH."
+        description="Conheça os professores e investigadores da FCH."
       />
       
       <section className="py-16">

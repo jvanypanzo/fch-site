@@ -6,7 +6,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/Card'
 
 export const metadata: Metadata = {
   title: 'Extensão',
-  description: 'Programas de extensão e cursos complementares da FCSH.',
+  description: 'Programas de extensão e cursos complementares da FCH.',
 }
 
 export default function ExtensaoPage() {
@@ -21,7 +21,7 @@ export default function ExtensaoPage() {
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto mb-12">
             <p className="text-lg text-gray-700 leading-relaxed">
-              A Coordenação de Extensão da FCSH oferece cursos complementares e programas de 
+              A Coordenação de Extensão da FCH oferece cursos complementares e programas de 
               formação contínua para profissionais e comunidade em geral. Os cursos são 
               ministrados por docentes da Faculdade e profissionais convidados, com certificação 
               emitida pela instituição.
@@ -84,7 +84,7 @@ export default function ExtensaoPage() {
               <div>
                 <h4 className="font-medium text-gray-900 mb-2">Certificação</h4>
                 <p className="text-sm text-gray-600">
-                  Certificados emitidos pela FCSH reconhecidos no mercado.
+                  Certificados emitidos pela FCH reconhecidos no mercado.
                 </p>
               </div>
               <div>

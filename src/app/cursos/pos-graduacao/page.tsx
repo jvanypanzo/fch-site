@@ -8,7 +8,7 @@ import { getCursosPosGraduacao } from '@/lib/queries/cursos'
 
 export const metadata: Metadata = {
   title: 'Cursos de Pós-Graduação',
-  description: 'Mestrados oferecidos pela FCSH - Psicologia Clínica e Gestão Social.',
+  description: 'Mestrados oferecidos pela FCH - Psicologia Clínica e Gestão Social.',
 }
 
 export default async function PosGraduacaoPage() {

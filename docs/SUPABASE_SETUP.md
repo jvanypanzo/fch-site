@@ -1,13 +1,13 @@
 # Configuração do Supabase
 
-Este documento descreve como configurar o Supabase para o projeto FCSH.
+Este documento descreve como configurar o Supabase para o projeto FCH.
 
 ## 1. Criar Projeto no Supabase
 
 1. Acesse [https://supabase.com](https://supabase.com) e faça login ou crie uma conta
 2. Clique em "New Project"
 3. Preencha os dados:
-   - Nome do projeto: `fcsh-site`
+   - Nome do projeto: `FCH-site`
    - Senha do banco de dados: (guarde em local seguro)
    - Região: Escolha a mais próxima
 4. Aguarde a criação do projeto

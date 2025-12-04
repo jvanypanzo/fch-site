@@ -126,8 +126,8 @@ export function Footer() {
               </li>
               <li className="flex items-center space-x-3">
                 <Mail className="w-5 h-5 text-primary flex-shrink-0" />
-                <a href="mailto:info@fcsh.edu" className="text-gray-300 dark:text-gray-400 hover:text-primary transition-colors text-sm">
-                  info@fcsh.edu
+                <a href="mailto:info@FCH.edu" className="text-gray-300 dark:text-gray-400 hover:text-primary transition-colors text-sm">
+                  info@FCH.edu
                 </a>
               </li>
             </ul>

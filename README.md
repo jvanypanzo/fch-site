@@ -1,4 +1,4 @@
-# FCSH - Faculdade de Ciências Humanas
+# FCH - Faculdade de Ciências Humanas
 
 Site institucional completo para a Faculdade de Ciências  Humanas (FCH).
 
@@ -113,4 +113,4 @@ Crie um arquivo `.env.local` na raiz do projeto (se necessário):
 
 ## 📝 Licença
 
-Este projeto é de uso institucional da FCSH.
+Este projeto é de uso institucional da FCH.

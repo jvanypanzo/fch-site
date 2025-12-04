@@ -5,14 +5,14 @@ import { TeamMember } from '@/components/shared/TeamMember'
 
 export const metadata: Metadata = {
   title: 'Membros da Associação de Estudantes',
-  description: 'Conheça a equipa da Associação de Estudantes da FCSH.',
+  description: 'Conheça a equipa da Associação de Estudantes da FCH.',
 }
 
 const direcao = [
-  { nome: 'João Pedro Silva', cargo: 'Presidente', curso: 'Psicologia', email: 'presidente@ae-fcsh.edu' },
-  { nome: 'Maria Ana Costa', cargo: 'Vice-Presidente', curso: 'Serviço Social', email: 'vicepresidente@ae-fcsh.edu' },
-  { nome: 'Carlos Manuel Ferreira', cargo: 'Tesoureiro', curso: 'Sociologia', email: 'tesoureiro@ae-fcsh.edu' },
-  { nome: 'Ana Sofia Martins', cargo: 'Secretária', curso: 'Comunicação Social', email: 'secretaria@ae-fcsh.edu' },
+  { nome: 'João Pedro Silva', cargo: 'Presidente', curso: 'Psicologia', email: 'presidente@ae-FCH.edu' },
+  { nome: 'Maria Ana Costa', cargo: 'Vice-Presidente', curso: 'Serviço Social', email: 'vicepresidente@ae-FCH.edu' },
+  { nome: 'Carlos Manuel Ferreira', cargo: 'Tesoureiro', curso: 'Sociologia', email: 'tesoureiro@ae-FCH.edu' },
+  { nome: 'Ana Sofia Martins', cargo: 'Secretária', curso: 'Comunicação Social', email: 'secretaria@ae-FCH.edu' },
 ]
 
 const departamentos = [
@@ -26,7 +26,7 @@ export default function MembrosPage() {
   return (
     <>
       <PageHeader
-        title="Membros da AE-FCSH"
+        title="Membros da AE-FCH"
         description="Conheça a equipa que representa os estudantes da Faculdade."
       />
       

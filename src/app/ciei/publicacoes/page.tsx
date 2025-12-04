@@ -6,7 +6,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/Card'
 
 export const metadata: Metadata = {
   title: 'Publicações',
-  description: 'Publicações científicas do CIEI - FCSH.',
+  description: 'Publicações científicas do CIEI - FCH.',
 }
 
 const artigos = [

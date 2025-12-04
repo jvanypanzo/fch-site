@@ -35,7 +35,7 @@ export default async function PsicologiaTrabalhoOrganizacoesPage() {
             <div className="lg:col-span-2">
               <SectionTitle title="Sobre o Curso" />
               <p className="text-gray-700 dark:text-gray-300 mb-8 leading-relaxed">
-                A Licenciatura em Psicologia do Trabalho e das Organizações da FCSH forma profissionais 
+                A Licenciatura em Psicologia do Trabalho e das Organizações da FCH forma profissionais 
                 capacitados para compreender e intervir nos processos psicológicos em contextos organizacionais. 
                 O curso oferece uma formação abrangente que inclui fundamentos teóricos, metodológicos e práticos 
                 da Psicologia Organizacional, preparando os estudantes para atuação em gestão de pessoas, 

@@ -5,7 +5,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/Card'
 
 export const metadata: Metadata = {
   title: 'Projetos de Investigação',
-  description: 'Projetos de investigação do CIEI - FCSH.',
+  description: 'Projetos de investigação do CIEI - FCH.',
 }
 
 const projetosAtivos = [

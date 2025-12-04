@@ -5,7 +5,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/Card'
 
 export const metadata: Metadata = {
   title: 'Projetos da Associação de Estudantes',
-  description: 'Projetos e iniciativas desenvolvidas pela Associação de Estudantes da FCSH.',
+  description: 'Projetos e iniciativas desenvolvidas pela Associação de Estudantes da FCH.',
 }
 
 const projetosAtivos = [
@@ -15,7 +15,7 @@ const projetosAtivos = [
     status: 'Ativo',
   },
   {
-    titulo: 'FCSH Cultural',
+    titulo: 'FCH Cultural',
     descricao: 'Programa de atividades culturais incluindo teatro, música, exposições e cinema.',
     status: 'Ativo',
   },

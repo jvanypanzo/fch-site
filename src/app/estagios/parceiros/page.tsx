@@ -6,7 +6,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/Card'
 
 export const metadata: Metadata = {
   title: 'Parceiros de Estágio',
-  description: 'Instituições e empresas parceiras para estágios da FCSH.',
+  description: 'Instituições e empresas parceiras para estágios da FCH.',
 }
 
 const parceiros = {

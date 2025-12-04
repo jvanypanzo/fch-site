@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/Button'
 
 export const metadata: Metadata = {
   title: 'Atividades Extracurriculares',
-  description: 'Atividades desportivas, culturais e de lazer da FCSH.',
+  description: 'Atividades desportivas, culturais e de lazer da FCH.',
 }
 
 const atividadesDesportivas = [
@@ -18,7 +18,7 @@ const atividadesDesportivas = [
 
 const atividadesCulturais = [
   { nome: 'Grupo de Teatro', horario: 'Sábados - 10:00', local: 'Auditório' },
-  { nome: 'Coral FCSH', horario: 'Quartas - 18:00', local: 'Sala de Música' },
+  { nome: 'Coral FCH', horario: 'Quartas - 18:00', local: 'Sala de Música' },
   { nome: 'Dança Tradicional', horario: 'Sextas - 17:00', local: 'Sala Multiusos' },
 ]
 

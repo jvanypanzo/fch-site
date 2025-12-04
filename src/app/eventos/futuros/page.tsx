@@ -7,7 +7,7 @@ import { getEventosFuturos } from '@/lib/queries/eventos'
 
 export const metadata: Metadata = {
   title: 'Eventos Futuros',
-  description: 'Próximos eventos da FCSH - Conferências, seminários, workshops e eventos culturais.',
+  description: 'Próximos eventos da FCH - Conferências, seminários, workshops e eventos culturais.',
 }
 
 export default async function EventosFuturosPage() {

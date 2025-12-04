@@ -6,7 +6,7 @@ import { getEventosRealizados } from '@/lib/queries/eventos'
 
 export const metadata: Metadata = {
   title: 'Eventos Realizados',
-  description: 'Histórico de eventos realizados pela FCSH.',
+  description: 'Histórico de eventos realizados pela FCH.',
 }
 
 export default async function EventosRealizadosPage() {
@@ -16,7 +16,7 @@ export default async function EventosRealizadosPage() {
     <>
       <PageHeader
         title="Eventos Realizados"
-        description="Confira o histórico de eventos realizados pela FCSH."
+        description="Confira o histórico de eventos realizados pela FCH."
       />
       
       <section className="py-16">

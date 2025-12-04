@@ -5,7 +5,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/Card'
 
 export const metadata: Metadata = {
   title: 'Contatos da Associação de Estudantes',
-  description: 'Entre em contato com a Associação de Estudantes da FCSH.',
+  description: 'Entre em contato com a Associação de Estudantes da FCH.',
 }
 
 export default function ContatosAEPage() {
@@ -13,7 +13,7 @@ export default function ContatosAEPage() {
     <>
       <PageHeader
         title="Contatos"
-        description="Entre em contato com a Associação de Estudantes da FCSH."
+        description="Entre em contato com a Associação de Estudantes da FCH."
       />
       
       <section className="py-16">
@@ -33,7 +33,7 @@ export default function ContatosAEPage() {
                   <p className="text-gray-600">
                     Gabinete da Associação de Estudantes<br />
                     Edifício Principal, Piso 1, Sala 101<br />
-                    Campus Universitário FCSH
+                    Campus Universitário FCH
                   </p>
                 </CardContent>
               </Card>
@@ -72,8 +72,8 @@ export default function ContatosAEPage() {
                     </li>
                     <li className="flex items-center">
                       <Mail className="w-4 h-4 mr-2 text-gray-400" />
-                      <a href="mailto:ae@fcsh.edu" className="text-primary hover:text-secondary">
-                        ae@fcsh.edu
+                      <a href="mailto:ae@FCH.edu" className="text-primary hover:text-secondary">
+                        ae@FCH.edu
                       </a>
                     </li>
                   </ul>
@@ -98,7 +98,7 @@ export default function ContatosAEPage() {
                       <Facebook className="w-6 h-6 text-blue-600 mr-4" />
                       <div>
                         <p className="font-medium text-gray-900">Facebook</p>
-                        <p className="text-sm text-gray-500">@aefcsh</p>
+                        <p className="text-sm text-gray-500">@aeFCH</p>
                       </div>
                     </a>
                     <a
@@ -108,7 +108,7 @@ export default function ContatosAEPage() {
                       <Instagram className="w-6 h-6 text-pink-600 mr-4" />
                       <div>
                         <p className="font-medium text-gray-900">Instagram</p>
-                        <p className="text-sm text-gray-500">@ae_fcsh</p>
+                        <p className="text-sm text-gray-500">@ae_FCH</p>
                       </div>
                     </a>
                   </div>
@@ -121,7 +121,7 @@ export default function ContatosAEPage() {
                 </CardHeader>
                 <CardContent>
                   <p className="text-gray-600 mb-4">
-                    Tem sugestões, reclamações ou ideias? A AE-FCSH está aqui para ouvir os estudantes!
+                    Tem sugestões, reclamações ou ideias? A AE-FCH está aqui para ouvir os estudantes!
                   </p>
                   <ul className="text-sm text-gray-600 space-y-2">
                     <li>• Atendimento presencial no gabinete</li>

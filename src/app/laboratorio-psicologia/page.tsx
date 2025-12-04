@@ -6,7 +6,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/Card'
 
 export const metadata: Metadata = {
   title: 'Laboratório de Psicologia',
-  description: 'Laboratório de Psicologia da FCSH - Serviços de avaliação e acompanhamento psicológico.',
+  description: 'Laboratório de Psicologia da FCH - Serviços de avaliação e acompanhamento psicológico.',
 }
 
 export default function LaboratorioPsicologiaPage() {
@@ -21,7 +21,7 @@ export default function LaboratorioPsicologiaPage() {
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto mb-12">
             <p className="text-lg text-gray-700 leading-relaxed mb-6">
-              O Laboratório de Psicologia da FCSH é um espaço de prestação de serviços psicológicos 
+              O Laboratório de Psicologia da FCH é um espaço de prestação de serviços psicológicos 
               à comunidade e de formação prática para os estudantes de Psicologia. Oferecemos 
               avaliação psicológica, acompanhamento terapêutico e orientação vocacional.
             </p>

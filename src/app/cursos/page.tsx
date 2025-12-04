@@ -8,7 +8,7 @@ import { getCursosGraduacao, getCursosPosGraduacao } from '@/lib/queries/cursos'
 
 export const metadata: Metadata = {
   title: 'Cursos',
-  description: 'Conheça os cursos de graduação e pós-graduação da FCSH.',
+  description: 'Conheça os cursos de graduação e pós-graduação da FCH.',
 }
 
 export default async function CursosPage() {
@@ -19,7 +19,7 @@ export default async function CursosPage() {
     <>
       <PageHeader
         title="Nossos Cursos"
-        description="A FCSH oferece cursos de graduação e pós-graduação nas áreas das Ciências Sociais e Humanas."
+        description="A FCH oferece cursos de graduação e pós-graduação nas áreas das Ciências Sociais e Humanas."
       />
       
       <section className="py-16">

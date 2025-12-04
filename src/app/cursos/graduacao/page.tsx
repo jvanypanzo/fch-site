@@ -8,7 +8,7 @@ import { getCursosGraduacao } from '@/lib/queries/cursos'
 
 export const metadata: Metadata = {
   title: 'Cursos de Graduação',
-  description: 'Licenciaturas oferecidas pela FCSH - Psicologia do Trabalho e das Organizações, Psicologia Clínica e Línguas.',
+  description: 'Licenciaturas oferecidas pela FCH - Psicologia do Trabalho e das Organizações, Psicologia Clínica e Línguas.',
 }
 
 export default async function GraduacaoPage() {

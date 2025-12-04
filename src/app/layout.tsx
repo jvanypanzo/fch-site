@@ -6,16 +6,16 @@ import './globals.css'
 
 export const metadata: Metadata = {
   title: {
-    default: 'FCSH - Faculdade de Ciências Sociais e Humanas',
-    template: '%s | FCSH',
+    default: 'FCH - Faculdade de Ciências Sociais e Humanas',
+    template: '%s | FCH',
   },
   description: 'Faculdade de Ciências Sociais e Humanas - Formando profissionais que transformam a sociedade. Cursos de Psicologia, Serviço Social, Sociologia e Comunicação Social.',
   keywords: ['faculdade', 'ciências sociais', 'ciências humanas', 'psicologia', 'serviço social', 'sociologia', 'comunicação social', 'universidade'],
-  authors: [{ name: 'FCSH' }],
+  authors: [{ name: 'FCH' }],
   openGraph: {
     type: 'website',
     locale: 'pt_BR',
-    siteName: 'FCSH - Faculdade de Ciências Sociais e Humanas',
+    siteName: 'FCH - Faculdade de Ciências Sociais e Humanas',
   },
 }
 

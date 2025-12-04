@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/Button'
 
 export const metadata: Metadata = {
   title: 'Marcação de Consulta',
-  description: 'Como marcar uma consulta no Laboratório de Psicologia da FCSH.',
+  description: 'Como marcar uma consulta no Laboratório de Psicologia da FCH.',
 }
 
 export default function MarcacaoPage() {
@@ -51,7 +51,7 @@ export default function MarcacaoPage() {
                     <li className="flex items-start">
                       <span className="font-medium mr-2">3.</span>
                       <span>
-                        <strong>Por email</strong> - laboratorio.psicologia@fcsh.edu
+                        <strong>Por email</strong> - laboratorio.psicologia@FCH.edu
                       </span>
                     </li>
                   </ul>
@@ -93,7 +93,7 @@ export default function MarcacaoPage() {
                 <CardContent>
                   <p className="text-gray-600">
                     Edifício B, Piso 1<br />
-                    Campus Universitário FCSH<br />
+                    Campus Universitário FCH<br />
                     Av. Principal, 1234
                   </p>
                 </CardContent>

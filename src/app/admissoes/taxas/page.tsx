@@ -5,7 +5,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/Card'
 
 export const metadata: Metadata = {
   title: 'Taxas e Propinas',
-  description: 'Informações sobre propinas e taxas académicas da FCSH.',
+  description: 'Informações sobre propinas e taxas académicas da FCH.',
 }
 
 const propinasGraduacao = [
@@ -34,7 +34,7 @@ export default function TaxasPage() {
     <>
       <PageHeader
         title="Taxas e Propinas"
-        description="Informações sobre custos académicos da FCSH."
+        description="Informações sobre custos académicos da FCH."
       />
       
       <section className="py-16">

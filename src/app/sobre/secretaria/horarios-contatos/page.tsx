@@ -5,7 +5,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/Card'
 
 export const metadata: Metadata = {
   title: 'Horários e Contatos da Secretaria',
-  description: 'Horário de funcionamento e formas de contato da Secretaria Académica da FCSH.',
+  description: 'Horário de funcionamento e formas de contato da Secretaria Académica da FCH.',
 }
 
 const horarios = [
@@ -92,14 +92,14 @@ export default function HorariosContatosPage() {
                   <ul className="space-y-2 text-gray-600">
                     <li>
                       <strong>Geral:</strong>{' '}
-                      <a href="mailto:secretaria@fcsh.edu" className="text-primary hover:text-secondary">
-                        secretaria@fcsh.edu
+                      <a href="mailto:secretaria@FCH.edu" className="text-primary hover:text-secondary">
+                        secretaria@FCH.edu
                       </a>
                     </li>
                     <li>
                       <strong>Matrículas:</strong>{' '}
-                      <a href="mailto:matriculas@fcsh.edu" className="text-primary hover:text-secondary">
-                        matriculas@fcsh.edu
+                      <a href="mailto:matriculas@FCH.edu" className="text-primary hover:text-secondary">
+                        matriculas@FCH.edu
                       </a>
                     </li>
                   </ul>

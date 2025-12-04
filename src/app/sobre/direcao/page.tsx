@@ -13,21 +13,21 @@ const direcao = [
     nome: 'Prof. Dr. Manuel Ferreira',
     cargo: 'Decano',
     titulacao: 'Doutor em Sociologia',
-    email: 'decano@fcsh.edu',
+    email: 'decano@FCH.edu',
     areas: ['Sociologia', 'Gestão Académica'],
   },
   {
     nome: 'Prof.ª Dr.ª Helena Martins',
     cargo: 'Vice-Decana para Assuntos Académicos',
     titulacao: 'Doutora em Psicologia',
-    email: 'vice.academico@fcsh.edu',
+    email: 'vice.academico@FCH.edu',
     areas: ['Psicologia Educacional', 'Pedagogia'],
   },
   {
     nome: 'Prof. Dr. Ricardo Santos',
     cargo: 'Vice-Decano para Investigação e Extensão',
     titulacao: 'Doutor em Serviço Social',
-    email: 'vice.investigacao@fcsh.edu',
+    email: 'vice.investigacao@FCH.edu',
     areas: ['Investigação Social', 'Políticas Públicas'],
   },
 ]
@@ -36,22 +36,22 @@ const coordenadores = [
   {
     nome: 'Prof. Dr. António Silva',
     cargo: 'Coordenador de Psicologia',
-    email: 'coord.psicologia@fcsh.edu',
+    email: 'coord.psicologia@FCH.edu',
   },
   {
     nome: 'Prof.ª Dr.ª Maria Santos',
     cargo: 'Coordenadora de Serviço Social',
-    email: 'coord.servicosocial@fcsh.edu',
+    email: 'coord.servicosocial@FCH.edu',
   },
   {
     nome: 'Prof. Dr. João Costa',
     cargo: 'Coordenador de Sociologia',
-    email: 'coord.sociologia@fcsh.edu',
+    email: 'coord.sociologia@FCH.edu',
   },
   {
     nome: 'Prof.ª Dr.ª Ana Rodrigues',
     cargo: 'Coordenadora de Comunicação Social',
-    email: 'coord.comunicacao@fcsh.edu',
+    email: 'coord.comunicacao@FCH.edu',
   },
 ]
 

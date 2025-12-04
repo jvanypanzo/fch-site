@@ -8,7 +8,7 @@ import { getEventosFuturos, getEventosRealizados } from '@/lib/queries/eventos'
 
 export const metadata: Metadata = {
   title: 'Eventos',
-  description: 'Conferências, seminários, workshops e eventos culturais da FCSH.',
+  description: 'Conferências, seminários, workshops e eventos culturais da FCH.',
 }
 
 export default async function EventosPage() {
@@ -19,7 +19,7 @@ export default async function EventosPage() {
     <>
       <PageHeader
         title="Eventos"
-        description="Conferências, seminários, workshops e eventos culturais promovidos pela FCSH."
+        description="Conferências, seminários, workshops e eventos culturais promovidos pela FCH."
       />
       
       <section className="py-16">

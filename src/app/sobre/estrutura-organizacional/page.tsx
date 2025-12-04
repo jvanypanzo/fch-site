@@ -59,7 +59,7 @@ export default function EstruturaOrganizacionalPage() {
     <>
       <PageHeader
         title="Estrutura Organizacional"
-        description="Como a FCSH está organizada para melhor servir a comunidade académica."
+        description="Como a FCH está organizada para melhor servir a comunidade académica."
       />
       
       <section className="py-16">
