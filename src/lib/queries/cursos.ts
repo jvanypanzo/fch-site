@@ -17,7 +17,8 @@ export async function getCursos() {
     if (error) throw error
     return data
   } catch {
-    // Fallback to static data on error
+    // Silently fall back to static data on error to ensure the page still renders
+    // This is intentional - we prioritize showing content over error logging
     return staticCursos
   }
 }
@@ -38,7 +39,8 @@ export async function getCursoBySlug(slug: string) {
     if (error) throw error
     return data
   } catch {
-    // Fallback to static data on error
+    // Silently fall back to static data on error to ensure the page still renders
+    // This is intentional - we prioritize showing content over error logging
     return staticCursos.find(c => c.slug === slug)
   }
 }
@@ -64,7 +66,8 @@ export async function getEstruturaCurricular(cursoId: string) {
     if (error) throw error
     return data
   } catch {
-    // Fallback to static data on error
+    // Silently fall back to static data on error to ensure the page still renders
+    // This is intentional - we prioritize showing content over error logging
     return staticGetEstruturaByCursoSlug(cursoId)
   }
 }

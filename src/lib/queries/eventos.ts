@@ -19,6 +19,8 @@ export async function getEventos(limit?: number) {
     if (error) throw error
     return data
   } catch {
+    // Silently return empty array on error - eventos are supplementary data
+    // This is intentional - we prioritize showing content over error logging
     return []
   }
 }

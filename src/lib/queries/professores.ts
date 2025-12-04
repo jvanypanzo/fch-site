@@ -17,7 +17,8 @@ export async function getProfessores() {
     if (error) throw error
     return data as Professor[]
   } catch {
-    // Fallback to static data on error
+    // Silently fall back to static data on error to ensure the page still renders
+    // This is intentional - we prioritize showing content over error logging
     return staticProfessores
   }
 }
@@ -42,7 +43,8 @@ export async function getProfessorBySlug(slug: string) {
     if (error) throw error
     return data
   } catch {
-    // Fallback to static data on error
+    // Silently fall back to static data on error to ensure the page still renders
+    // This is intentional - we prioritize showing content over error logging
     return staticGetProfessorBySlug(slug)
   }
 }
@@ -65,6 +67,8 @@ export async function getProfessorDisciplinas(professorId: string) {
     if (error) throw error
     return data
   } catch {
+    // Silently return empty array on error - disciplinas are supplementary data
+    // This is intentional - we prioritize showing content over error logging
     return []
   }
 }
