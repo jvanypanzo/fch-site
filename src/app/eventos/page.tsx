@@ -1,9 +1,11 @@
 import { Metadata } from 'next'
+import Image from 'next/image'
 import Link from 'next/link'
 import { ArrowRight, Calendar, Clock, MapPin } from 'lucide-react'
 import { PageHeader } from '@/components/shared/PageHeader'
 import { SectionTitle } from '@/components/shared/SectionTitle'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/Card'
+import { Button } from '@/components/ui/Button'
 import { getEventosFuturos, getEventosRealizados } from '@/lib/queries/eventos'
 
 export const revalidate = 60 // Revalida cache a cada 60 segundos
@@ -35,7 +37,22 @@ export default async function EventosPage() {
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {eventosFuturos.slice(0, 3).map((evento) => (
-                <Card key={evento.id} className="h-full hover:shadow-lg transition-shadow">
+                <Card key={evento.id} className="h-full hover:shadow-lg transition-shadow overflow-hidden">
+                  {/* Event Image */}
+                  <div className="relative h-48 w-full">
+                    {evento.imagem_url ? (
+                      <Image
+                        src={evento.imagem_url}
+                        alt={evento.titulo}
+                        fill
+                        className="object-cover"
+                      />
+                    ) : (
+                      <div className="bg-gray-200 dark:bg-gray-700 h-full flex items-center justify-center">
+                        <span className="text-gray-500 dark:text-gray-400">Sem imagem</span>
+                      </div>
+                    )}
+                  </div>
                   <CardHeader>
                     <div className="flex items-center space-x-2 text-sm text-secondary mb-2">
                       <Calendar className="w-4 h-4" />
@@ -45,7 +62,7 @@ export default async function EventosPage() {
                   </CardHeader>
                   <CardContent>
                     <p className="text-gray-600 text-sm mb-4">{evento.descricao}</p>
-                    <div className="space-y-2 text-sm text-gray-500">
+                    <div className="space-y-2 text-sm text-gray-500 mb-4">
                       <div className="flex items-center">
                         <Clock className="w-4 h-4 mr-2" />
                         {evento.hora}
@@ -55,6 +72,11 @@ export default async function EventosPage() {
                         {evento.local}
                       </div>
                     </div>
+                    <Link href={`/eventos/${evento.slug}`}>
+                      <Button variant="outline" size="sm" className="w-full">
+                        Mais informações
+                      </Button>
+                    </Link>
                   </CardContent>
                 </Card>
               ))}
@@ -70,7 +92,22 @@ export default async function EventosPage() {
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {eventosRealizados.slice(0, 3).map((evento) => (
-                <Card key={evento.id} className="h-full opacity-90">
+                <Card key={evento.id} className="h-full opacity-90 overflow-hidden">
+                  {/* Event Image */}
+                  <div className="relative h-48 w-full">
+                    {evento.imagem_url ? (
+                      <Image
+                        src={evento.imagem_url}
+                        alt={evento.titulo}
+                        fill
+                        className="object-cover opacity-75"
+                      />
+                    ) : (
+                      <div className="bg-gray-200 dark:bg-gray-700 h-full flex items-center justify-center">
+                        <span className="text-gray-500 dark:text-gray-400">Sem imagem</span>
+                      </div>
+                    )}
+                  </div>
                   <CardHeader>
                     <div className="flex items-center space-x-2 text-sm text-gray-500 mb-2">
                       <Calendar className="w-4 h-4" />
