@@ -1,4 +1,6 @@
 import { Metadata } from 'next'
+import Image from 'next/image'
+import Link from 'next/link'
 import { Calendar, Clock, MapPin } from 'lucide-react'
 import { PageHeader } from '@/components/shared/PageHeader'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/Card'
@@ -27,7 +29,22 @@ export default async function EventosFuturosPage() {
           {eventosFuturos.length > 0 ? (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {eventosFuturos.map((evento) => (
-                <Card key={evento.id} className="h-full hover:shadow-lg transition-shadow">
+                <Card key={evento.id} className="h-full hover:shadow-lg transition-shadow overflow-hidden">
+                  {/* Event Image */}
+                  <div className="relative h-48 w-full">
+                    {evento.imagem_url ? (
+                      <Image
+                        src={evento.imagem_url}
+                        alt={evento.titulo}
+                        fill
+                        className="object-cover"
+                      />
+                    ) : (
+                      <div className="bg-gray-200 dark:bg-gray-700 h-full flex items-center justify-center">
+                        <span className="text-gray-500 dark:text-gray-400">Sem imagem</span>
+                      </div>
+                    )}
+                  </div>
                   <CardHeader>
                     <div className="flex items-center justify-between mb-2">
                       <span className={`text-xs px-2 py-1 rounded ${
@@ -57,9 +74,11 @@ export default async function EventosFuturosPage() {
                         {evento.local}
                       </div>
                     </div>
-                    <Button variant="outline" size="sm" className="w-full">
-                      Mais informações
-                    </Button>
+                    <Link href={`/eventos/${evento.slug}`}>
+                      <Button variant="outline" size="sm" className="w-full">
+                        Mais informações
+                      </Button>
+                    </Link>
                   </CardContent>
                 </Card>
               ))}
