@@ -23,18 +23,14 @@ export function HeroBanner() {
                 Conhecer Cursos
               </Button>
             </Link>
-            <Link href="/admissoes">
-              <Button size="lg" variant="outline" className="w-full sm:w-auto bg-transparent text-white border-primary hover:bg-primary hover:text-white dark:hover:text-white">
-                Inscreva-se
-              </Button>
-            </Link>
+           
           </div>
         </div>
         
         {/* Stats */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-16 max-w-4xl">
           <div className="text-center">
-            <p className="text-3xl md:text-4xl font-bold text-primary">4</p>
+            <p className="text-3xl md:text-4xl font-bold text-primary">3</p>
             <p className="text-sm text-gray-300 dark:text-gray-400">Cursos de Graduação</p>
           </div>
           <div className="text-center">
@@ -46,7 +42,7 @@ export function HeroBanner() {
             <p className="text-sm text-gray-300 dark:text-gray-400">Docentes</p>
           </div>
           <div className="text-center">
-            <p className="text-3xl md:text-4xl font-bold text-primary">30+</p>
+            <p className="text-3xl md:text-4xl font-bold text-primary">18+</p>
             <p className="text-sm text-gray-300 dark:text-gray-400">Anos de História</p>
           </div>
         </div>
