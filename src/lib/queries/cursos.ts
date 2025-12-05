@@ -1,6 +1,9 @@
 import { supabase, isSupabaseConfigured } from '@/lib/supabase'
 import type { Curso } from '@/types/database'
 
+// Course grau type (from database)
+export type CursoGrau = 'Licenciatura' | 'Pós-Graduação'
+
 // Course display interface for frontend
 export interface CursoDisplay {
   id: string
@@ -14,6 +17,11 @@ export interface CursoDisplay {
   perfil: string
   areas: string[]
   pdfUrl?: string
+}
+
+// Helper function to map grau to tipo
+function grauToTipo(grau: string | undefined): 'graduacao' | 'pos-graduacao' {
+  return grau === 'Pós-Graduação' ? 'pos-graduacao' : 'graduacao'
 }
 
 // Structure for curriculum (internal to this module)
@@ -418,11 +426,10 @@ function getFallbackEstruturaByCursoSlug(slug: string): EstruturaCurricular | un
 
 // Transform database curso to display format
 function transformCursoToDisplay(dbCurso: Curso & { coordenador?: { nome: string } | null }): CursoDisplay {
-  const tipo: 'graduacao' | 'pos-graduacao' = dbCurso.tipo === 'pos-graduacao' ? 'pos-graduacao' : 'graduacao'
   return {
     id: dbCurso.id,
     nome: dbCurso.nome,
-    tipo,
+    tipo: grauToTipo(dbCurso.grau),
     duracao: dbCurso.duracao || '4 anos',
     descricao: dbCurso.descricao || '',
     coordenador: dbCurso.coordenador?.nome || '',
@@ -459,6 +466,48 @@ export async function getCursos(): Promise<CursoDisplay[]> {
   } catch {
     return fallbackCursos
   }
+}
+
+// Get cursos by grau (Licenciatura ou Pós-Graduação)
+export async function getCursosByGrau(grau: CursoGrau): Promise<CursoDisplay[]> {
+  // Use fallback data if Supabase is not configured
+  if (!isSupabaseConfigured || !supabase) {
+    const tipo = grauToTipo(grau)
+    return fallbackCursos.filter(c => c.tipo === tipo)
+  }
+
+  try {
+    const { data, error } = await supabase
+      .from('cursos')
+      .select(`
+        *,
+        coordenador:professores!cursos_coordenador_id_fkey(nome)
+      `)
+      .eq('grau', grau)
+      .order('nome')
+    
+    if (error) throw error
+    
+    if (data && data.length > 0) {
+      return data.map(transformCursoToDisplay)
+    }
+    
+    // Fallback when no data in database
+    const tipo = grauToTipo(grau)
+    return fallbackCursos.filter(c => c.tipo === tipo)
+  } catch {
+    const tipo = grauToTipo(grau)
+    return fallbackCursos.filter(c => c.tipo === tipo)
+  }
+}
+
+// Get cursos agrupados por grau
+export async function getCursosAgrupados(): Promise<{ licenciatura: CursoDisplay[], posGraduacao: CursoDisplay[] }> {
+  const [licenciatura, posGraduacao] = await Promise.all([
+    getCursosByGrau('Licenciatura'),
+    getCursosByGrau('Pós-Graduação')
+  ])
+  return { licenciatura, posGraduacao }
 }
 
 export async function getCursoBySlug(slug: string): Promise<CursoDisplay | undefined> {
@@ -577,15 +626,13 @@ export async function getEstruturaCurricular(cursoSlug: string): Promise<Estrutu
   }
 }
 
-// Async helper functions for filtering by type
+// Async helper functions for filtering by type - now use getCursosByGrau for efficiency
 export async function getCursosGraduacao(): Promise<CursoDisplay[]> {
-  const cursos = await getCursos()
-  return cursos.filter(c => c.tipo === 'graduacao')
+  return getCursosByGrau('Licenciatura')
 }
 
 export async function getCursosPosGraduacao(): Promise<CursoDisplay[]> {
-  const cursos = await getCursos()
-  return cursos.filter(c => c.tipo === 'pos-graduacao')
+  return getCursosByGrau('Pós-Graduação')
 }
 
 // Export all course slugs for static generation
