@@ -1,6 +1,5 @@
 'use client'
 
-import { Metadata } from 'next'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { z } from 'zod'
@@ -29,7 +28,7 @@ export default function ContatoPage() {
     resolver: zodResolver(contactSchema),
   })
 
-  const onSubmit = async (data: ContactForm) => {
+  const onSubmit = async (_data: ContactForm) => {
     // Simular envio
     await new Promise(resolve => setTimeout(resolve, 1000))
     alert('Mensagem enviada com sucesso! Entraremos em contato em breve.')

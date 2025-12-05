@@ -1,6 +1,5 @@
 import { Metadata } from 'next'
 import { PageHeader } from '@/components/shared/PageHeader'
-import { SectionTitle } from '@/components/shared/SectionTitle'
 import { TeamMember } from '@/components/shared/TeamMember'
 import { getProfessores } from '@/lib/queries/professores'
 
