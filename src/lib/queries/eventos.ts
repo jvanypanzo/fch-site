@@ -15,13 +15,28 @@ export interface EventoDisplay {
   created_at: string
 }
 
+// Get today's date in YYYY-MM-DD format for database queries
+function getTodayDateString(): string {
+  return new Date().toISOString().split('T')[0]
+}
+
+// Extract time from ISO date string safely
+function extractTimeFromDate(dateString: string): string {
+  try {
+    const date = new Date(dateString)
+    if (isNaN(date.getTime())) {
+      return ''
+    }
+    const timeString = date.toTimeString().slice(0, 5)
+    return timeString !== '00:00' ? timeString : ''
+  } catch {
+    return ''
+  }
+}
+
 // Transform database evento to display format
 function transformEventoToDisplay(dbEvento: Evento): EventoDisplay {
-  // Extract time from data if it contains time information, otherwise default to empty
-  const dataDate = new Date(dbEvento.data)
-  const hora = dataDate.toTimeString().slice(0, 5) !== '00:00' 
-    ? dataDate.toTimeString().slice(0, 5) 
-    : ''
+  const extractedHora = extractTimeFromDate(dbEvento.data)
   
   return {
     id: dbEvento.id,
@@ -29,7 +44,7 @@ function transformEventoToDisplay(dbEvento: Evento): EventoDisplay {
     slug: dbEvento.slug || dbEvento.id,
     descricao: dbEvento.descricao || '',
     data: dbEvento.data,
-    hora: dbEvento.hora || hora,
+    hora: dbEvento.hora || extractedHora,
     local: dbEvento.local || '',
     tipo: dbEvento.tipo || 'conferencia',
     imagem_url: dbEvento.imagem_url,
@@ -71,7 +86,7 @@ export async function getEventosFuturos(limit?: number): Promise<EventoDisplay[]
   }
 
   try {
-    const today = new Date().toISOString().split('T')[0]
+    const today = getTodayDateString()
     
     let query = supabase
       .from('eventos')
@@ -101,7 +116,7 @@ export async function getEventosRealizados(limit?: number): Promise<EventoDispla
   }
 
   try {
-    const today = new Date().toISOString().split('T')[0]
+    const today = getTodayDateString()
     
     let query = supabase
       .from('eventos')
