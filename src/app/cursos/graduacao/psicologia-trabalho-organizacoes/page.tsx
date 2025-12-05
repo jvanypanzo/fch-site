@@ -54,7 +54,7 @@ export default async function PsicologiaTrabalhoOrganizacoesPage() {
                 ))}
               </ul>
               
-              <SectionTitle title="Perfil do Egresso" />
+              <SectionTitle title="Saidas Profissionais" />
               <p className="text-gray-700 dark:text-gray-300 mb-8 leading-relaxed">{curso.perfil}</p>
               
               {estrutura && <EstruturaProgramatica estrutura={estrutura} />}

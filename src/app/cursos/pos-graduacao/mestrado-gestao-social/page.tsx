@@ -51,7 +51,7 @@ export default async function MestradoGestaoSocialPage() {
                 ))}
               </ul>
               
-              <SectionTitle title="Perfil do Egresso" />
+              <SectionTitle title="Saidas Profissionais" />
               <p className="text-gray-700 mb-8 leading-relaxed">{curso.perfil}</p>
               
               <SectionTitle title="Estrutura Curricular" />
