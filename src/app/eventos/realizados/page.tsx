@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 }
 
 export default async function EventosRealizadosPage() {
-  const eventosRealizados = getEventosRealizados()
+  const eventosRealizados = await getEventosRealizados()
 
   return (
     <>

@@ -75,9 +75,12 @@ export interface Decana {
 export interface Evento {
   id: string
   titulo: string
+  slug?: string
   descricao?: string
   data: string
+  hora?: string
   local?: string
+  tipo?: string
   imagem_url?: string
   created_at: string
 }

@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 }
 
 export default async function EventosFuturosPage() {
-  const eventosFuturos = getEventosFuturos()
+  const eventosFuturos = await getEventosFuturos()
 
   return (
     <>
