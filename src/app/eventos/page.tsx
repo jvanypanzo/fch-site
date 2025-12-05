@@ -14,8 +14,8 @@ export const metadata: Metadata = {
 }
 
 export default async function EventosPage() {
-  const eventosFuturos = getEventosFuturos()
-  const eventosRealizados = getEventosRealizados()
+  const eventosFuturos = await getEventosFuturos()
+  const eventosRealizados = await getEventosRealizados()
 
   return (
     <>
