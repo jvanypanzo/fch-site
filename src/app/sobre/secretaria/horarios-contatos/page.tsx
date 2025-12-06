@@ -4,7 +4,7 @@ import { PageHeader } from '@/components/shared/PageHeader'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/Card'
 
 export const metadata: Metadata = {
-  title: 'Horários e Contatos da Secretaria',
+  title: 'Horários e Contactos da Secretaria',
   description: 'Horário de funcionamento e formas de contato da Secretaria Académica da FCH.',
 }
 
@@ -18,11 +18,11 @@ const horarios = [
   { dia: 'Domingo', horario: 'Fechado' },
 ]
 
-export default function HorariosContatosPage() {
+export default function HorariosContactosPage() {
   return (
     <>
       <PageHeader
-        title="Horários e Contatos"
+        title="Horários e Contactos"
         description="Saiba quando e como contactar a Secretaria Académica."
       />
       

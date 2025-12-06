@@ -6,7 +6,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/Card'
 
 export const metadata: Metadata = {
   title: 'Secretaria',
-  description: 'Secretaria Académica da FCH - Serviços, formulários, horários e contatos.',
+  description: 'Secretaria Académica da FCH - Serviços, formulários, horários e Contactos.',
 }
 
 const sections = [
@@ -24,9 +24,9 @@ const sections = [
   },
   {
     icon: Clock,
-    title: 'Horários e Contatos',
+    title: 'Horários e Contactos',
     description: 'Horário de funcionamento e formas de contato.',
-    href: '/sobre/secretaria/horarios-contatos',
+    href: '/sobre/secretaria/horarios-Contactos',
   },
 ]
 

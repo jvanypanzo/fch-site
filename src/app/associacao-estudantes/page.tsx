@@ -24,9 +24,9 @@ const sections = [
   },
   {
     icon: Mail,
-    title: 'Contatos',
+    title: 'Contactos',
     description: 'Entre em contato com a Associação de Estudantes.',
-    href: '/associacao-estudantes/contatos',
+    href: '/associacao-estudantes/Contactos',
   },
 ]
 
@@ -81,7 +81,7 @@ export default function AssociacaoEstudantesPage() {
               A AE-FCH está sempre à procura de estudantes motivados para contribuir. 
               Se tens ideias, energia e vontade de fazer a diferença, junta-te a nós!
             </p>
-            <Link href="/associacao-estudantes/contatos">
+            <Link href="/associacao-estudantes/Contactos">
               <span className="inline-flex items-center px-6 py-3 bg-primary text-white rounded-md hover:bg-primary-light transition-colors font-medium">
                 Entra em Contato
               </span>

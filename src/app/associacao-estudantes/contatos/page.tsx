@@ -4,15 +4,15 @@ import { PageHeader } from '@/components/shared/PageHeader'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/Card'
 
 export const metadata: Metadata = {
-  title: 'Contatos da Associação de Estudantes',
+  title: 'Contactos da Associação de Estudantes',
   description: 'Entre em contato com a Associação de Estudantes da FCH.',
 }
 
-export default function ContatosAEPage() {
+export default function ContactosAEPage() {
   return (
     <>
       <PageHeader
-        title="Contatos"
+        title="Contactos"
         description="Entre em contato com a Associação de Estudantes da FCH."
       />
       

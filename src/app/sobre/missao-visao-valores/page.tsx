@@ -10,24 +10,22 @@ export const metadata: Metadata = {
 
 const valores = [
   {
-    title: 'Excelência Académica',
-    description: 'Compromisso com a qualidade do ensino, da investigação e da extensão.',
+    title: 'Trabalho',
   },
   {
-    title: 'Ética',
-    description: 'Atuação pautada por princípios éticos e pela integridade em todas as ações.',
+    title: 'Responsabilidade',
   },
   {
-    title: 'Responsabilidade Social',
-    description: 'Compromisso com o desenvolvimento da sociedade e o bem-estar da comunidade.',
+    title: 'Respeito',
   },
   {
-    title: 'Inclusão',
-    description: 'Respeito à diversidade e promoção de um ambiente inclusivo e acolhedor.',
+    title: 'Serviço',
   },
   {
-    title: 'Inovação',
-    description: 'Busca constante por novas abordagens e metodologias de ensino e investigação.',
+    title: 'Liberdade',
+  },
+   {
+    title: 'Transparência',
   },
 ]
 
@@ -51,9 +49,7 @@ export default function MissaoVisaoValoresPage() {
                   <h2 className="text-2xl font-bold">Missão</h2>
                 </div>
                 <p className="text-gray-200 leading-relaxed">
-                  Formar profissionais competentes e socialmente responsáveis nas áreas das 
-                  Ciências Sociais e Humanas, através de um ensino de qualidade, investigação 
-                  relevante e extensão comprometida com o desenvolvimento da sociedade.
+                  Formar homens e mulheres plenos de valores humanos e eticos dotados de conhecimento técnico e científico inovadores, capazes de servir a comunidade com rectidão e brio.
                 </p>
               </CardContent>
             </Card>
@@ -67,9 +63,7 @@ export default function MissaoVisaoValoresPage() {
                   <h2 className="text-2xl font-bold">Visão</h2>
                 </div>
                 <p className="text-white/90 leading-relaxed">
-                  Ser referência nacional e internacional na formação de profissionais nas áreas 
-                  das Ciências Sociais e Humanas, reconhecida pela excelência do ensino, pela 
-                  relevância da investigação e pelo impacto social das suas ações.
+                 Afirmar-se como uma Faculdade de referência, nos dominio das ciências humanas. 
                 </p>
               </CardContent>
             </Card>
@@ -82,7 +76,7 @@ export default function MissaoVisaoValoresPage() {
               </div>
               <h2 className="text-3xl font-bold text-primary mb-4">Nossos Valores</h2>
               <p className="text-gray-600">
-                Os princípios fundamentais que guiam todas as nossas ações e decisões.
+                Os valores que sustentam a visão estratégica da Faculdade devem estar presentes em todos os seus programas, actividades e actuação são:
               </p>
             </div>
             
@@ -91,7 +85,6 @@ export default function MissaoVisaoValoresPage() {
                 <Card key={index}>
                   <CardContent className="pt-6">
                     <h3 className="text-lg font-semibold text-primary mb-2">{valor.title}</h3>
-                    <p className="text-gray-600">{valor.description}</p>
                   </CardContent>
                 </Card>
               ))}

@@ -26,7 +26,7 @@ export function TeamMember({ nome, cargo, titulacao, areas, email, foto_url, dep
     <Card className="h-full">
       <CardContent className="pt-6">
         <div className="flex justify-center mb-4">
-          <Avatar src={foto_url} name={nome} size="sm" className="!w-20 !h-20" />
+          <Avatar src={foto_url} name={nome} size="xl" className="!w-60 !h-60"  />
         </div>
         {slug ? (
           <Link href={`/corpo-docente/${slug}`}>

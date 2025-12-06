@@ -3,7 +3,7 @@ import { NavItem } from '@/types'
 export const navigationItems: NavItem[] = [
   
   {
-    title: 'Cursos',
+    title: 'Ensino',
     href: '/cursos',
     children: [
       {
@@ -26,7 +26,34 @@ export const navigationItems: NavItem[] = [
     ],
   },
   {
-    title: 'Corpo Docente',
+    title: 'Investigação',
+    href: '/ciei',
+    children: [
+      { title: 'Projetos', href: '/ciei/projetos' },
+      { title: 'Investigadores', href: '/ciei/investigadores' },
+      { title: 'Publicações', href: '/ciei/publicacoes' },
+    ],
+  },
+  {
+    title: 'Extensão',
+    href: '/extensao',
+    children: [
+      { title: 'Cursos Complementares', href: '/extensao/cursos-complementares' },
+      { title: 'Laboratório de Psicologia', href: '/laboratorio-psicologia' },
+      { title: 'Estágios',
+      href: '/estagios',
+      children: [
+      { title: 'Supervisores', href: '/estagios/supervisores' },
+      { title: 'Parceiros', href: '/estagios/parceiros' },
+    ],
+    }
+    ],
+  },
+
+
+
+  {
+    title: 'Docentes',
     href: '/corpo-docente',
   },
   {
@@ -42,34 +69,18 @@ export const navigationItems: NavItem[] = [
     href: '/associacao-estudantes',
     children: [
       { title: 'Membros', href: '/associacao-estudantes/membros' },
-      { title: 'Projetos', href: '/associacao-estudantes/projetos' },
-      { title: 'Contatos', href: '/associacao-estudantes/contatos' },
+      { title: 'Contactos', href: '/associacao-estudantes/Contactos' },
     ],
   },
-  {
+ /*{
     title: 'Coordenação Extracurricular',
     href: '/coordenacao-extracurricular',
     children: [
       { title: 'Atividades', href: '/coordenacao-extracurricular/atividades' },
     ],
-  },
-  {
-    title: 'Estágios',
-    href: '/estagios',
-    children: [
-      { title: 'Supervisores', href: '/estagios/supervisores' },
-      { title: 'Parceiros', href: '/estagios/parceiros' },
-    ],
-  },
-  {
-    title: 'CIEI',
-    href: '/ciei',
-    children: [
-      { title: 'Projetos', href: '/ciei/projetos' },
-      { title: 'Investigadores', href: '/ciei/investigadores' },
-      { title: 'Publicações', href: '/ciei/publicacoes' },
-    ],
-  },
+  },*/
+
+  
   {
     title: 'Sobre',
     href: '/sobre',
@@ -84,27 +95,13 @@ export const navigationItems: NavItem[] = [
         children: [
           { title: 'Serviços', href: '/sobre/secretaria/servicos' },
           { title: 'Formulários', href: '/sobre/secretaria/formularios' },
-          { title: 'Horários e Contatos', href: '/sobre/secretaria/horarios-contatos' },
+          { title: 'Horários e Contactos', href: '/sobre/secretaria/horarios-Contactos' },
         ],
       },
     ],
   },
-  {
-    title: 'Extensão',
-    href: '/extensao',
-    children: [
-      { title: 'Cursos Complementares', href: '/extensao/cursos-complementares' },
-      { title: 'Inscrição', href: '/extensao/inscricao' },
-    ],
-  },
-  {
-    title: 'Laboratório de Psicologia',
-    href: '/laboratorio-psicologia',
-    children: [
-      { title: 'Serviços', href: '/laboratorio-psicologia/servicos' },
-      { title: 'Marcação', href: '/laboratorio-psicologia/marcacao' },
-    ],
-  },
+
+  
   {
     title: 'Admissões',
     href: '/admissoes',
@@ -116,11 +113,7 @@ export const navigationItems: NavItem[] = [
     ],
   },
   {
-    title: 'Links Úteis',
-    href: '/links-uteis',
-  },
-  {
-    title: 'Contato',
+    title: 'Contacto',
     href: '/contato',
   },
 ]
