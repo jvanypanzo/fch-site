@@ -7,7 +7,7 @@ import { Menu, X, ChevronDown } from 'lucide-react'
 import { navigationItems } from '@/data/navigation'
 import { MobileMenu } from './MobileMenu'
 import { ThemeToggle } from '@/components/ui/ThemeToggle'
-import logo from './logo.jpeg'
+import logo from './FCH.png'
 
 export function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
@@ -21,8 +21,8 @@ export function Header() {
             <Image 
               src={logo} 
               alt="Logo UCAN - Faculdade de Ciências Humanas" 
-              width={100} 
-              height={80}
+              width={200} 
+              height={200}
               className="rounded-full object-cover"
               priority
             />

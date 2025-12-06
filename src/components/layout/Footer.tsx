@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { Facebook, Instagram, Linkedin, Mail, MapPin, Phone, Youtube } from 'lucide-react'
-import logo from './logo.jpeg'
+import logo from './FCH.png'
 
 export function Footer() {
   return (
@@ -14,8 +14,8 @@ export function Footer() {
               <Image 
                 src={logo} 
                 alt="Logo UCAN - Faculdade de Ciências Humanas" 
-                width={100} 
-                height={100}
+                width={200} 
+                height={200}
                 className="rounded-full object-cover"
               />
               <span className="text-xl font-bold text-primary">FCH</span>
