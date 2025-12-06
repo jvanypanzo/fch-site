@@ -1,25 +1,7 @@
 import { NavItem } from '@/types'
 
 export const navigationItems: NavItem[] = [
-  {
-    title: 'Sobre',
-    href: '/sobre',
-    children: [
-      { title: 'História', href: '/sobre/historia' },
-      { title: 'Missão, Visão e Valores', href: '/sobre/missao-visao-valores' },
-      { title: 'Estrutura Organizacional', href: '/sobre/estrutura-organizacional' },
-      { title: 'Direção', href: '/sobre/direcao' },
-      {
-        title: 'Secretaria',
-        href: '/sobre/secretaria',
-        children: [
-          { title: 'Serviços', href: '/sobre/secretaria/servicos' },
-          { title: 'Formulários', href: '/sobre/secretaria/formularios' },
-          { title: 'Horários e Contatos', href: '/sobre/secretaria/horarios-contatos' },
-        ],
-      },
-    ],
-  },
+  
   {
     title: 'Cursos',
     href: '/cursos',
@@ -77,7 +59,6 @@ export const navigationItems: NavItem[] = [
     children: [
       { title: 'Supervisores', href: '/estagios/supervisores' },
       { title: 'Parceiros', href: '/estagios/parceiros' },
-      { title: 'Candidatura', href: '/estagios/candidatura' },
     ],
   },
   {
@@ -87,6 +68,25 @@ export const navigationItems: NavItem[] = [
       { title: 'Projetos', href: '/ciei/projetos' },
       { title: 'Investigadores', href: '/ciei/investigadores' },
       { title: 'Publicações', href: '/ciei/publicacoes' },
+    ],
+  },
+  {
+    title: 'Sobre',
+    href: '/sobre',
+    children: [
+      { title: 'História', href: '/sobre/historia' },
+      { title: 'Missão, Visão e Valores', href: '/sobre/missao-visao-valores' },
+      { title: 'Estrutura Organizacional', href: '/sobre/estrutura-organizacional' },
+      { title: 'Direção', href: '/sobre/direcao' },
+      {
+        title: 'Secretaria',
+        href: '/sobre/secretaria',
+        children: [
+          { title: 'Serviços', href: '/sobre/secretaria/servicos' },
+          { title: 'Formulários', href: '/sobre/secretaria/formularios' },
+          { title: 'Horários e Contatos', href: '/sobre/secretaria/horarios-contatos' },
+        ],
+      },
     ],
   },
   {
