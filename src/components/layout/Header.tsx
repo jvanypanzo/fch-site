@@ -21,16 +21,12 @@ export function Header() {
             <Image 
               src={logo} 
               alt="Logo UCAN - Faculdade de Ciências Humanas" 
-              width={200} 
-              height={200}
+              width={150} 
+              height={150}
               className="rounded-full object-cover"
               priority
             />
-            <div className="hidden sm:block">
-              <span className="hidden md:inline text-gray-1000 dark:text-gray-1000 text-sm ml-2">
-                Faculdade de Ciências Humanas
-              </span>
-            </div>
+            
           </Link>
 
           {/* Desktop Navigation */}
